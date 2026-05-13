@@ -4,8 +4,6 @@
 CREATE TABLE users (
     id UUID PRIMARY KEY,
     full_name VARCHAR(255) NOT NULL,
-    institution_code VARCHAR(100),
-    institution_role VARCHAR(50), -- Values: Estudiante, Profesor, Personal, Directivo
     email VARCHAR(255) NOT NULL UNIQUE,
     password_hash VARCHAR(255) NOT NULL, -- To be hashed with Argon2
     status VARCHAR(50) NOT NULL DEFAULT 'PENDING' -- Values: PENDING, ENROLLED, BLOCKED
