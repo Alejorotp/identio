@@ -1,0 +1,11 @@
+{
+  "$schema": "https://schema.railpack.com",
+  "steps": {
+    "build": {
+      "commands": ["./mvnw clean package -DskipTests"]
+    }
+  },
+  "deploy": {
+    "startCommand": "java -jar target/mvp-0.0.1-SNAPSHOT.jar"
+  }
+}
