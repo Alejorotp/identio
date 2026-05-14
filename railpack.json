@@ -3,12 +3,11 @@
   "steps": {
     "build": {
       "commands": [
-        "cd mvp",
-        "./mvnw clean package -DskipTests"
+        "cd mvp && chmod +x ./mvnw && ./mvnw clean package -DskipTests"
       ]
     }
   },
   "deploy": {
-    "startCommand": "java -jar target/mvp-0.0.1-SNAPSHOT.jar"
+    "startCommand": "java -jar mvp/target/mvp-0.0.1-SNAPSHOT.jar"
   }
 }
