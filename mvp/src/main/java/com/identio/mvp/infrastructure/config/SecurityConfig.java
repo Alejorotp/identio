@@ -48,8 +48,9 @@ public class SecurityConfig {
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/auth/**").permitAll()
-                        .requestMatchers("/identio.auth.AuthService/**").permitAll()
-                        .requestMatchers("/grpc.reflection.v1.ServerReflection/**", "/grpc.reflection.v1alpha.ServerReflection/**", "/grpc.health.v1.Health/**").permitAll()
+                        .requestMatchers("/identio.auth.AuthService/**", "/identio.auth.AuthService/Login", "/identio.auth.AuthService/Register").permitAll()
+                        .requestMatchers("/grpc.reflection.v1.ServerReflection/**", "/grpc.reflection.v1alpha.ServerReflection/**", "/grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo").permitAll()
+                        .requestMatchers("/grpc.health.v1.Health/**").permitAll()
                         .requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
                         .anyRequest().authenticated()
                 )
