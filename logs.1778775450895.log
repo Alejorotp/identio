@@ -1,0 +1,1001 @@
+2026-05-14T16:14:10.940513599Z [inf]  	at org.springframework.boot.tomcat.servlet.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:166) ~[spring-boot-tomcat-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:10.940518509Z [inf]  	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:190) ~[spring-boot-web-server-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:10.940522137Z [inf]  	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:164) ~[spring-boot-web-server-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:10.941790730Z [inf]  	... 13 common frames omitted
+2026-05-14T16:14:10.941796413Z [inf]  Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'grpcServlet' defined in class path resource [org/springframework/boot/grpc/server/autoconfigure/GrpcServerFactoryAutoConfiguration$GrpcServletConfiguration.class]: Failed to instantiate [org.springframework.boot.web.servlet.ServletRegistrationBean]: Factory method 'grpcServlet' threw exception with message: Error creating bean with name 'authServiceGrpcImpl' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/com/identio/mvp/interfaces/auth/grpc/AuthServiceGrpcImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'authUseCaseImpl' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/com/identio/mvp/application/auth/usecases/AuthUseCaseImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepository' defined in com.identio.mvp.domain.user.repositories.UserRepository defined in @EnableJpaRepositories declared on DataJpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+2026-05-14T16:14:10.941800284Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:657) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.941803500Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:645) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.941807383Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1362) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.941811086Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1194) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.943679886Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.943688546Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.943693594Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.943697762Z [inf]  	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.943702014Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.943707488Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.943711367Z [inf]  	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:231) ~[spring-boot-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:10.943715611Z [inf]  	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:222) ~[spring-boot-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:10.943718955Z [inf]  	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addServletContextInitializerBeans(ServletContextInitializerBeans.java:107) ~[spring-boot-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:10.943722633Z [inf]  	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:96) ~[spring-boot-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:10.943727053Z [inf]  	at org.springframework.boot.web.context.servlet.WebApplicationContextInitializer.initialize(WebApplicationContextInitializer.java:53) ~[spring-boot-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:10.945261712Z [inf]  	at org.springframework.boot.tomcat.servlet.DeferredServletContainerInitializers.onStartup(DeferredServletContainerInitializers.java:55) ~[spring-boot-tomcat-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:10.945267335Z [inf]  	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4416) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:10.945271120Z [inf]  	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:10.945274172Z [inf]  	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1162) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:10.945277696Z [inf]  	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1158) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:10.945280712Z [inf]  	at java.base/java.util.concurrent.FutureTask.run(Unknown Source) ~[na:na]
+2026-05-14T16:14:10.945283855Z [inf]  	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:81) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:10.945286901Z [inf]  	at java.base/java.util.concurrent.AbstractExecutorService.submit(Unknown Source) ~[na:na]
+2026-05-14T16:14:10.945289998Z [inf]  	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:714) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:10.945293399Z [inf]  	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:780) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:10.945296760Z [inf]  	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:10.945303149Z [inf]  	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1162) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:10.947297110Z [inf]  	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1158) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:10.947301625Z [inf]  	at java.base/java.util.concurrent.FutureTask.run(Unknown Source) ~[na:na]
+2026-05-14T16:14:10.947306470Z [inf]  	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:81) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:10.947309322Z [inf]  	at java.base/java.util.concurrent.AbstractExecutorService.submit(Unknown Source) ~[na:na]
+2026-05-14T16:14:10.947312102Z [inf]  	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:714) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:10.947315404Z [inf]  	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:201) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:10.947318168Z [inf]  	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:10.947320838Z [inf]  	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:410) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:10.947323695Z [inf]  	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:10.947326644Z [inf]  	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:864) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:10.947329767Z [inf]  	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:10.947332755Z [inf]  	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:435) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:10.947335847Z [inf]  	at org.springframework.boot.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:131) ~[spring-boot-tomcat-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:10.947339189Z [inf]  	... 18 common frames omitted
+2026-05-14T16:14:10.947341858Z [inf]  Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.web.servlet.ServletRegistrationBean]: Factory method 'grpcServlet' threw exception with message: Error creating bean with name 'authServiceGrpcImpl' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/com/identio/mvp/interfaces/auth/grpc/AuthServiceGrpcImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'authUseCaseImpl' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/com/identio/mvp/application/auth/usecases/AuthUseCaseImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepository' defined in com.identio.mvp.domain.user.repositories.UserRepository defined in @EnableJpaRepositories declared on DataJpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+2026-05-14T16:14:10.949146628Z [inf]  	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:183) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.949153360Z [inf]  	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:72) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.949157201Z [inf]  	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:152) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.949160846Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.949164574Z [inf]  	... 57 common frames omitted
+2026-05-14T16:14:10.949168085Z [inf]  Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authServiceGrpcImpl' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/com/identio/mvp/interfaces/auth/grpc/AuthServiceGrpcImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'authUseCaseImpl' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/com/identio/mvp/application/auth/usecases/AuthUseCaseImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepository' defined in com.identio.mvp.domain.user.repositories.UserRepository defined in @EnableJpaRepositories declared on DataJpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+2026-05-14T16:14:10.949171321Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.949174265Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.951287360Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1382) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.951294546Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1221) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.951298103Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.951301368Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.951305158Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.951309387Z [inf]  	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.951313254Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.951316635Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.951319959Z [inf]  	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansWithAnnotation(DefaultListableBeanFactory.java:791) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.951323946Z [inf]  	at org.springframework.context.support.AbstractApplicationContext.getBeansWithAnnotation(AbstractApplicationContext.java:1471) ~[spring-context-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.952964805Z [inf]  	at org.springframework.grpc.internal.ApplicationContextBeanLookupUtils.getOrderedBeansWithAnnotation(ApplicationContextBeanLookupUtils.java:66) ~[spring-grpc-core-1.0.3.jar!/:1.0.3]
+2026-05-14T16:14:10.952969699Z [inf]  	at org.springframework.grpc.server.service.DefaultGrpcServiceDiscoverer.listServiceNames(DefaultGrpcServiceDiscoverer.java:57) ~[spring-grpc-core-1.0.3.jar!/:1.0.3]
+2026-05-14T16:14:10.952972931Z [inf]  	at org.springframework.boot.grpc.server.autoconfigure.GrpcServerFactoryAutoConfiguration$GrpcServletConfiguration.grpcServlet(GrpcServerFactoryAutoConfiguration.java:84) ~[spring-grpc-server-spring-boot-autoconfigure-1.0.3.jar!/:1.0.3]
+2026-05-14T16:14:10.952975870Z [inf]  	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source) ~[na:na]
+2026-05-14T16:14:10.952978925Z [inf]  	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+2026-05-14T16:14:10.952981751Z [inf]  	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:155) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.952984527Z [inf]  	... 60 common frames omitted
+2026-05-14T16:14:10.952987116Z [inf]  Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authUseCaseImpl' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/com/identio/mvp/application/auth/usecases/AuthUseCaseImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepository' defined in com.identio.mvp.domain.user.repositories.UserRepository defined in @EnableJpaRepositories declared on DataJpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+2026-05-14T16:14:10.952990872Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.954985437Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.954991809Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1382) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.954996465Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1221) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.955000693Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.955004748Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.955008566Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.955012494Z [inf]  	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.955018153Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.955022643Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.955026621Z [inf]  	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:229) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.957063643Z [inf]  	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1762) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.957068733Z [inf]  	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1651) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.957076157Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:912) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.957079505Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.957082639Z [inf]  	... 77 common frames omitted
+2026-05-14T16:14:10.957085679Z [inf]  Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userRepository' defined in com.identio.mvp.domain.user.repositories.UserRepository defined in @EnableJpaRepositories declared on DataJpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+2026-05-14T16:14:10.957089055Z [inf]  	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:377) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.957092058Z [inf]  	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.957095000Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1712) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.957097938Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1461) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.958786428Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.958792320Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.958797904Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.958801059Z [inf]  	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.958804161Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.958807786Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.958810827Z [inf]  	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveBean(DefaultListableBeanFactory.java:1225) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.958813701Z [inf]  	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1704) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.958816884Z [inf]  	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1651) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.958820169Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:912) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.958823283Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.960733165Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.960738894Z [inf]  	... 91 common frames omitted
+2026-05-14T16:14:10.960738945Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.960751293Z [inf]  Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jpaSharedEM_entityManagerFactory': Cannot resolve reference to bean 'entityManagerFactory' while setting constructor argument
+2026-05-14T16:14:10.960755974Z [inf]  	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:377) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.960760647Z [inf]  	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.960767577Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:691) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.960771670Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:513) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.960777481Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1362) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.960782395Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1194) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.962960291Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.962966091Z [inf]  	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.962969784Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.962976184Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.962981083Z [inf]  	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:356) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.962985382Z [inf]  	... 105 common frames omitted
+2026-05-14T16:14:10.962989373Z [inf]  Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2026-05-14T16:14:10.962995821Z [inf]  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-05-14T16:14:10.963001945Z [inf]  SQL State  : 08001
+2026-05-14T16:14:10.963005557Z [inf]  Error Code : 0
+2026-05-14T16:14:10.963009225Z [inf]  Message    : Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2026-05-14T16:14:10.965158646Z [inf]  
+2026-05-14T16:14:10.965165303Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1817) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.965169895Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.965173672Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.965177255Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.965180944Z [inf]  	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.965185092Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.965189454Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.965194573Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:309) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.965198833Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.965202738Z [inf]  	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.968724582Z [inf]  	... 117 common frames omitted
+2026-05-14T16:14:10.968731224Z [inf]  Caused by: org.flywaydb.core.internal.exception.sqlExceptions.FlywaySqlUnableToConnectToDbException: Unable to obtain connection from database: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2026-05-14T16:14:10.968735041Z [inf]  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-05-14T16:14:10.968741193Z [inf]  SQL State  : 08001
+2026-05-14T16:14:10.968744398Z [inf]  Error Code : 0
+2026-05-14T16:14:10.968747646Z [inf]  Message    : Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2026-05-14T16:14:10.968751126Z [inf]  
+2026-05-14T16:14:10.968754737Z [inf]  	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:70) ~[flyway-core-11.14.1.jar!/:na]
+2026-05-14T16:14:10.968758158Z [inf]  	at org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:76) ~[flyway-core-11.14.1.jar!/:na]
+2026-05-14T16:14:10.968762083Z [inf]  	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:142) ~[flyway-core-11.14.1.jar!/:na]
+2026-05-14T16:14:10.968765030Z [inf]  	at org.flywaydb.core.Flyway.migrate(Flyway.java:186) ~[flyway-core-11.14.1.jar!/:na]
+2026-05-14T16:14:10.968767742Z [inf]  	at org.springframework.boot.flyway.autoconfigure.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:67) ~[spring-boot-flyway-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:10.968771706Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1864) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.968774767Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1813) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:10.970408009Z [inf]  	... 126 common frames omitted
+2026-05-14T16:14:10.970412601Z [inf]  Caused by: org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2026-05-14T16:14:10.970415676Z [inf]  	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:373) ~[postgresql-42.7.10.jar!/:42.7.10]
+2026-05-14T16:14:10.970419015Z [inf]  	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:57) ~[postgresql-42.7.10.jar!/:42.7.10]
+2026-05-14T16:14:10.970422042Z [inf]  	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:290) ~[postgresql-42.7.10.jar!/:42.7.10]
+2026-05-14T16:14:10.970424989Z [inf]  	at org.postgresql.Driver.makeConnection(Driver.java:448) ~[postgresql-42.7.10.jar!/:42.7.10]
+2026-05-14T16:14:10.970428011Z [inf]  	at org.postgresql.Driver.connect(Driver.java:298) ~[postgresql-42.7.10.jar!/:42.7.10]
+2026-05-14T16:14:10.970431122Z [inf]  	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-7.0.2.jar!/:na]
+2026-05-14T16:14:10.970433954Z [inf]  	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373) ~[HikariCP-7.0.2.jar!/:na]
+2026-05-14T16:14:10.970438034Z [inf]  	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210) ~[HikariCP-7.0.2.jar!/:na]
+2026-05-14T16:14:10.970440834Z [inf]  	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-7.0.2.jar!/:na]
+2026-05-14T16:14:10.970443474Z [inf]  	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576) ~[HikariCP-7.0.2.jar!/:na]
+2026-05-14T16:14:10.970446103Z [inf]  	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97) ~[HikariCP-7.0.2.jar!/:na]
+2026-05-14T16:14:10.970448943Z [inf]  	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111) ~[HikariCP-7.0.2.jar!/:na]
+2026-05-14T16:14:10.972204142Z [inf]  	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:65) ~[flyway-core-11.14.1.jar!/:na]
+2026-05-14T16:14:10.972211702Z [inf]  	... 132 common frames omitted
+2026-05-14T16:14:10.972219799Z [inf]  Caused by: java.net.ConnectException: Connection refused
+2026-05-14T16:14:10.972224058Z [inf]  	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+2026-05-14T16:14:10.972227292Z [inf]  	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source) ~[na:na]
+2026-05-14T16:14:10.972231368Z [inf]  	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(Unknown Source) ~[na:na]
+2026-05-14T16:14:10.972234767Z [inf]  	at java.base/sun.nio.ch.NioSocketImpl.connect(Unknown Source) ~[na:na]
+2026-05-14T16:14:10.972238386Z [inf]  	at java.base/java.net.SocksSocketImpl.connect(Unknown Source) ~[na:na]
+2026-05-14T16:14:10.972241679Z [inf]  	at java.base/java.net.Socket.connect(Unknown Source) ~[na:na]
+2026-05-14T16:14:10.972246708Z [inf]  	at org.postgresql.core.PGStream.createSocket(PGStream.java:261) ~[postgresql-42.7.10.jar!/:42.7.10]
+2026-05-14T16:14:10.972250099Z [inf]  	at org.postgresql.core.PGStream.<init>(PGStream.java:122) ~[postgresql-42.7.10.jar!/:42.7.10]
+2026-05-14T16:14:10.972257411Z [inf]  	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:146) ~[postgresql-42.7.10.jar!/:42.7.10]
+2026-05-14T16:14:10.972260696Z [inf]  	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:289) ~[postgresql-42.7.10.jar!/:42.7.10]
+2026-05-14T16:14:10.972263992Z [inf]  	... 144 common frames omitted
+2026-05-14T16:14:10.972268312Z [inf]  
+2026-05-14T16:14:13.523504684Z [inf]  
+2026-05-14T16:14:13.523512395Z [inf]    .   ____          _            __ _ _
+2026-05-14T16:14:13.523517010Z [inf]   /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+2026-05-14T16:14:13.523523227Z [inf]  ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+2026-05-14T16:14:13.523527826Z [inf]   \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+2026-05-14T16:14:13.523532445Z [inf]    '  |____| .__|_| |_|_| |_\__, | / / / /
+2026-05-14T16:14:13.523536122Z [inf]   =========|_|==============|___/=/_/_/_/
+2026-05-14T16:14:13.523540514Z [inf]  
+2026-05-14T16:14:13.523544606Z [inf]   :: Spring Boot ::                (v4.0.6)
+2026-05-14T16:14:13.523548470Z [inf]  
+2026-05-14T16:14:13.928727083Z [inf]  2026-05-14T16:14:13.633Z  INFO 1 --- [mvp] [           main] com.identio.mvp.MvpApplication           : Starting MvpApplication v0.0.1-SNAPSHOT using Java 21.0.11 with PID 1 (/app/app.jar started by spring in /app)
+2026-05-14T16:14:13.928735685Z [inf]  2026-05-14T16:14:13.636Z  INFO 1 --- [mvp] [           main] com.identio.mvp.MvpApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-05-14T16:14:15.954113025Z [inf]  2026-05-14T16:14:15.642Z  INFO 1 --- [mvp] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-14T16:14:15.954117505Z [inf]  2026-05-14T16:14:15.815Z  INFO 1 --- [mvp] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 105 ms. Found 2 JPA repository interfaces.
+2026-05-14T16:14:17.314237430Z [inf]  2026-05-14T16:14:17.308Z  INFO 1 --- [mvp] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-05-14T16:14:17.340038357Z [inf]  2026-05-14T16:14:17.327Z  INFO 1 --- [mvp] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-14T16:14:17.340055402Z [inf]  2026-05-14T16:14:17.328Z  INFO 1 --- [mvp] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-14T16:14:17.449918609Z [inf]  2026-05-14T16:14:17.440Z  INFO 1 --- [mvp] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 3701 ms
+2026-05-14T16:14:18.328862054Z [inf]  2026-05-14T16:14:18.325Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classpath resources at 'classpath:db/callback' ...
+2026-05-14T16:14:18.328868826Z [inf]  2026-05-14T16:14:18.325Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Determining location urls for classpath:db/callback using ClassLoader TomcatEmbeddedWebappClassLoader
+2026-05-14T16:14:18.328876756Z [inf]    context: ROOT
+2026-05-14T16:14:18.328880377Z [inf]    delegate: true
+2026-05-14T16:14:18.328884369Z [inf]  ----------> Parent Classloader:
+2026-05-14T16:14:18.328889737Z [inf]  org.springframework.boot.loader.launch.LaunchedClassLoader@16b98e56
+2026-05-14T16:14:18.328893854Z [inf]   ...
+2026-05-14T16:14:18.328897663Z [inf]  2026-05-14T16:14:18.325Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Unable to resolve location classpath:db/callback.
+2026-05-14T16:14:18.328901643Z [inf]  2026-05-14T16:14:18.325Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classpath resources at 'classpath:db/migration' ...
+2026-05-14T16:14:18.328904887Z [inf]  2026-05-14T16:14:18.325Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Determining location urls for classpath:db/migration using ClassLoader TomcatEmbeddedWebappClassLoader
+2026-05-14T16:14:18.328908283Z [inf]    context: ROOT
+2026-05-14T16:14:18.328911785Z [inf]    delegate: true
+2026-05-14T16:14:18.328915309Z [inf]  ----------> Parent Classloader:
+2026-05-14T16:14:18.328918512Z [inf]  org.springframework.boot.loader.launch.LaunchedClassLoader@16b98e56
+2026-05-14T16:14:18.328923699Z [inf]   ...
+2026-05-14T16:14:18.328926852Z [inf]  2026-05-14T16:14:18.326Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning URL: jar:nested:/app/app.jar/!BOOT-INF/classes/!/db/migration
+2026-05-14T16:14:18.330678486Z [inf]  2026-05-14T16:14:18.328Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/
+2026-05-14T16:14:18.330685783Z [inf]  2026-05-14T16:14:18.328Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/V1__init_roles.sql
+2026-05-14T16:14:18.330690069Z [inf]  2026-05-14T16:14:18.328Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/V2__create_users_table.sql
+2026-05-14T16:14:18.330693666Z [inf]  2026-05-14T16:14:18.329Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classpath resources at 'classpath:db/migration' ...
+2026-05-14T16:14:18.330697780Z [inf]  2026-05-14T16:14:18.329Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Determining location urls for classpath:db/migration using ClassLoader TomcatEmbeddedWebappClassLoader
+2026-05-14T16:14:18.330701044Z [inf]    context: ROOT
+2026-05-14T16:14:18.330704605Z [inf]    delegate: true
+2026-05-14T16:14:18.330710078Z [inf]  ----------> Parent Classloader:
+2026-05-14T16:14:18.330713960Z [inf]  org.springframework.boot.loader.launch.LaunchedClassLoader@16b98e56
+2026-05-14T16:14:18.330717169Z [inf]   ...
+2026-05-14T16:14:18.330720608Z [inf]  2026-05-14T16:14:18.329Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning URL: jar:nested:/app/app.jar/!BOOT-INF/classes/!/db/migration
+2026-05-14T16:14:18.330724140Z [inf]  2026-05-14T16:14:18.329Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/
+2026-05-14T16:14:18.330727310Z [inf]  2026-05-14T16:14:18.329Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/V1__init_roles.sql
+2026-05-14T16:14:18.330730437Z [inf]  2026-05-14T16:14:18.329Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/V2__create_users_table.sql
+2026-05-14T16:14:18.332417563Z [inf]  2026-05-14T16:14:18.329Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classes at classpath:db/migration
+2026-05-14T16:14:18.334344271Z [inf]  2026-05-14T16:14:18.332Z  INFO 1 --- [mvp] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-14T16:14:19.435345038Z [inf]  2026-05-14T16:14:19.431Z ERROR 1 --- [mvp] [           main] t.s.DeferredServletContainerInitializers : Error starting Tomcat context. Exception: org.springframework.beans.factory.BeanCreationException. Message: Error creating bean with name 'grpcServlet' defined in class path resource [org/springframework/boot/grpc/server/autoconfigure/GrpcServerFactoryAutoConfiguration$GrpcServletConfiguration.class]: Failed to instantiate [org.springframework.boot.web.servlet.ServletRegistrationBean]: Factory method 'grpcServlet' threw exception with message: Error creating bean with name 'authServiceGrpcImpl' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/com/identio/mvp/interfaces/auth/grpc/AuthServiceGrpcImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'authUseCaseImpl' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/com/identio/mvp/application/auth/usecases/AuthUseCaseImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepository' defined in com.identio.mvp.domain.user.repositories.UserRepository defined in @EnableJpaRepositories declared on DataJpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+2026-05-14T16:14:19.451082107Z [inf]  2026-05-14T16:14:19.448Z  INFO 1 --- [mvp] [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-05-14T16:14:19.452743681Z [inf]  2026-05-14T16:14:19.451Z  WARN 1 --- [mvp] [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2026-05-14T16:14:19.459383128Z [inf]  2026-05-14T16:14:19.457Z  INFO 1 --- [mvp] [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+2026-05-14T16:14:19.459393733Z [inf]  
+2026-05-14T16:14:19.459398240Z [inf]  Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-05-14T16:14:19.480915619Z [inf]  2026-05-14T16:14:19.470Z ERROR 1 --- [mvp] [           main] o.s.boot.SpringApplication               : Application run failed
+2026-05-14T16:14:19.480918530Z [inf]  	at com.identio.mvp.MvpApplication.main(MvpApplication.java:10) ~[!/:0.0.1-SNAPSHOT]
+2026-05-14T16:14:19.480921573Z [inf]  
+2026-05-14T16:14:19.480926649Z [inf]  org.springframework.context.ApplicationContextException: Unable to start web server
+2026-05-14T16:14:19.480926930Z [inf]  	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source) ~[na:na]
+2026-05-14T16:14:19.480930824Z [inf]  	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:167) ~[spring-boot-web-server-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:19.480933987Z [inf]  	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:615) ~[spring-context-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.480936858Z [inf]  	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:19.480941241Z [inf]  	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:19.480944250Z [inf]  	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:19.480947015Z [inf]  	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:19.480949722Z [inf]  	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:19.480952537Z [inf]  	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:19.482804102Z [inf]  	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+2026-05-14T16:14:19.482810353Z [inf]  	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:106) ~[app.jar:0.0.1-SNAPSHOT]
+2026-05-14T16:14:19.482814537Z [inf]  	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:64) ~[app.jar:0.0.1-SNAPSHOT]
+2026-05-14T16:14:19.482818411Z [inf]  	at org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:40) ~[app.jar:0.0.1-SNAPSHOT]
+2026-05-14T16:14:19.482821728Z [inf]  Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+2026-05-14T16:14:19.482825623Z [inf]  	at org.springframework.boot.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:150) ~[spring-boot-tomcat-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:19.482829819Z [inf]  	at org.springframework.boot.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:110) ~[spring-boot-tomcat-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:19.482833598Z [inf]  	at org.springframework.boot.tomcat.servlet.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:408) ~[spring-boot-tomcat-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:19.482837367Z [inf]  	at org.springframework.boot.tomcat.servlet.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:166) ~[spring-boot-tomcat-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:19.482840704Z [inf]  	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:190) ~[spring-boot-web-server-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:19.482844296Z [inf]  	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:164) ~[spring-boot-web-server-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:19.482847493Z [inf]  	... 13 common frames omitted
+2026-05-14T16:14:19.482851474Z [inf]  Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'grpcServlet' defined in class path resource [org/springframework/boot/grpc/server/autoconfigure/GrpcServerFactoryAutoConfiguration$GrpcServletConfiguration.class]: Failed to instantiate [org.springframework.boot.web.servlet.ServletRegistrationBean]: Factory method 'grpcServlet' threw exception with message: Error creating bean with name 'authServiceGrpcImpl' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/com/identio/mvp/interfaces/auth/grpc/AuthServiceGrpcImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'authUseCaseImpl' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/com/identio/mvp/application/auth/usecases/AuthUseCaseImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepository' defined in com.identio.mvp.domain.user.repositories.UserRepository defined in @EnableJpaRepositories declared on DataJpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+2026-05-14T16:14:19.484618937Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:657) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.484623854Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:645) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.484627387Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1362) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.484630896Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1194) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.484634861Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.484638560Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.484642770Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.484646666Z [inf]  	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.484651449Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.484654999Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.484658229Z [inf]  	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:231) ~[spring-boot-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:19.486250073Z [inf]  	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:222) ~[spring-boot-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:19.486256296Z [inf]  	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addServletContextInitializerBeans(ServletContextInitializerBeans.java:107) ~[spring-boot-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:19.486259822Z [inf]  	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:96) ~[spring-boot-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:19.486264613Z [inf]  	at org.springframework.boot.web.context.servlet.WebApplicationContextInitializer.initialize(WebApplicationContextInitializer.java:53) ~[spring-boot-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:19.486267597Z [inf]  	at org.springframework.boot.tomcat.servlet.DeferredServletContainerInitializers.onStartup(DeferredServletContainerInitializers.java:55) ~[spring-boot-tomcat-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:19.486270873Z [inf]  	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4416) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:19.486273873Z [inf]  	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:19.486277454Z [inf]  	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1162) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:19.486280522Z [inf]  	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1158) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:19.486284286Z [inf]  	at java.base/java.util.concurrent.FutureTask.run(Unknown Source) ~[na:na]
+2026-05-14T16:14:19.486288557Z [inf]  	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:81) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:19.486292214Z [inf]  	at java.base/java.util.concurrent.AbstractExecutorService.submit(Unknown Source) ~[na:na]
+2026-05-14T16:14:19.495398405Z [inf]  	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:714) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:19.495405516Z [inf]  	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:780) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:19.495410045Z [inf]  	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:19.495414908Z [inf]  	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1162) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:19.495419160Z [inf]  	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1158) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:19.495424015Z [inf]  	at java.base/java.util.concurrent.FutureTask.run(Unknown Source) ~[na:na]
+2026-05-14T16:14:19.495428045Z [inf]  	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:81) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:19.495432622Z [inf]  	at java.base/java.util.concurrent.AbstractExecutorService.submit(Unknown Source) ~[na:na]
+2026-05-14T16:14:19.495436508Z [inf]  	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:714) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:19.495440405Z [inf]  	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:201) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:19.495444219Z [inf]  	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:19.495448014Z [inf]  	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:410) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:19.495453019Z [inf]  	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:19.500671851Z [inf]  	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:864) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:19.500676712Z [inf]  	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:19.500680622Z [inf]  	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:435) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:19.500685702Z [inf]  	at org.springframework.boot.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:131) ~[spring-boot-tomcat-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:19.500689289Z [inf]  	... 18 common frames omitted
+2026-05-14T16:14:19.500692735Z [inf]  Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.web.servlet.ServletRegistrationBean]: Factory method 'grpcServlet' threw exception with message: Error creating bean with name 'authServiceGrpcImpl' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/com/identio/mvp/interfaces/auth/grpc/AuthServiceGrpcImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'authUseCaseImpl' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/com/identio/mvp/application/auth/usecases/AuthUseCaseImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepository' defined in com.identio.mvp.domain.user.repositories.UserRepository defined in @EnableJpaRepositories declared on DataJpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+2026-05-14T16:14:19.500697014Z [inf]  	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:183) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.500700621Z [inf]  	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:72) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.501626767Z [inf]  	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:152) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.501631933Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.501635428Z [inf]  	... 57 common frames omitted
+2026-05-14T16:14:19.501638902Z [inf]  Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authServiceGrpcImpl' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/com/identio/mvp/interfaces/auth/grpc/AuthServiceGrpcImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'authUseCaseImpl' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/com/identio/mvp/application/auth/usecases/AuthUseCaseImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepository' defined in com.identio.mvp.domain.user.repositories.UserRepository defined in @EnableJpaRepositories declared on DataJpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+2026-05-14T16:14:19.501642140Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.501645377Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.501648712Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1382) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.501652073Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1221) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.502736754Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.502743249Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.502747988Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.502752107Z [inf]  	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.502756397Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.502761000Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.502786364Z [inf]  	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansWithAnnotation(DefaultListableBeanFactory.java:791) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.502792580Z [inf]  	at org.springframework.context.support.AbstractApplicationContext.getBeansWithAnnotation(AbstractApplicationContext.java:1471) ~[spring-context-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.502797593Z [inf]  	at org.springframework.grpc.internal.ApplicationContextBeanLookupUtils.getOrderedBeansWithAnnotation(ApplicationContextBeanLookupUtils.java:66) ~[spring-grpc-core-1.0.3.jar!/:1.0.3]
+2026-05-14T16:14:19.502801694Z [inf]  	at org.springframework.grpc.server.service.DefaultGrpcServiceDiscoverer.listServiceNames(DefaultGrpcServiceDiscoverer.java:57) ~[spring-grpc-core-1.0.3.jar!/:1.0.3]
+2026-05-14T16:14:19.504048472Z [inf]  	at org.springframework.boot.grpc.server.autoconfigure.GrpcServerFactoryAutoConfiguration$GrpcServletConfiguration.grpcServlet(GrpcServerFactoryAutoConfiguration.java:84) ~[spring-grpc-server-spring-boot-autoconfigure-1.0.3.jar!/:1.0.3]
+2026-05-14T16:14:19.504052705Z [inf]  	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source) ~[na:na]
+2026-05-14T16:14:19.504055584Z [inf]  	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+2026-05-14T16:14:19.504058298Z [inf]  	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:155) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.504061032Z [inf]  	... 60 common frames omitted
+2026-05-14T16:14:19.504063751Z [inf]  Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authUseCaseImpl' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/com/identio/mvp/application/auth/usecases/AuthUseCaseImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepository' defined in com.identio.mvp.domain.user.repositories.UserRepository defined in @EnableJpaRepositories declared on DataJpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+2026-05-14T16:14:19.504066566Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.504069272Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.504071986Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1382) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.505674393Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1221) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.505678545Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.505681876Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.505685085Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.505688422Z [inf]  	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.505692045Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.505695673Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.505699144Z [inf]  	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:229) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.505702560Z [inf]  	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1762) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.505706324Z [inf]  	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1651) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.507459708Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:912) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.507463401Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.507466708Z [inf]  	... 77 common frames omitted
+2026-05-14T16:14:19.507470624Z [inf]  Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userRepository' defined in com.identio.mvp.domain.user.repositories.UserRepository defined in @EnableJpaRepositories declared on DataJpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+2026-05-14T16:14:19.507473490Z [inf]  	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:377) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.507476270Z [inf]  	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.507479018Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1712) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.507481751Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1461) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.507484375Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.507487023Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.509300441Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.509306995Z [inf]  	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.509310583Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.509313952Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.509317149Z [inf]  	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveBean(DefaultListableBeanFactory.java:1225) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.509320372Z [inf]  	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1704) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.509324030Z [inf]  	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1651) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.509328990Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:912) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.509332050Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.509335458Z [inf]  	... 91 common frames omitted
+2026-05-14T16:14:19.509338196Z [inf]  Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jpaSharedEM_entityManagerFactory': Cannot resolve reference to bean 'entityManagerFactory' while setting constructor argument
+2026-05-14T16:14:19.510730345Z [inf]  	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:377) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.510735326Z [inf]  	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.510738376Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:691) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.510741243Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:513) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.510743939Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1362) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.510746852Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1194) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.510749768Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.510752467Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.510755056Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.510757765Z [inf]  	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.512506865Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.512513411Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.512520005Z [inf]  	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:356) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.512523242Z [inf]  	... 105 common frames omitted
+2026-05-14T16:14:19.512527005Z [inf]  Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2026-05-14T16:14:19.512530705Z [inf]  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-05-14T16:14:19.512534234Z [inf]  SQL State  : 08001
+2026-05-14T16:14:19.512537954Z [inf]  Error Code : 0
+2026-05-14T16:14:19.512541777Z [inf]  Message    : Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2026-05-14T16:14:19.512545583Z [inf]  
+2026-05-14T16:14:19.512549165Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1817) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.512552845Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.514295744Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.514300115Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.514303408Z [inf]  	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.514306657Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.514310231Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.514314047Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:309) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.514317787Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.514322546Z [inf]  	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.514326130Z [inf]  	... 117 common frames omitted
+2026-05-14T16:14:19.514330316Z [inf]  Caused by: org.flywaydb.core.internal.exception.sqlExceptions.FlywaySqlUnableToConnectToDbException: Unable to obtain connection from database: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2026-05-14T16:14:19.514333980Z [inf]  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-05-14T16:14:19.516036102Z [inf]  	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:373) ~[postgresql-42.7.10.jar!/:42.7.10]
+2026-05-14T16:14:19.516055724Z [inf]  SQL State  : 08001
+2026-05-14T16:14:19.516063371Z [inf]  Error Code : 0
+2026-05-14T16:14:19.516066737Z [inf]  Message    : Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2026-05-14T16:14:19.516069981Z [inf]  
+2026-05-14T16:14:19.516072977Z [inf]  	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:70) ~[flyway-core-11.14.1.jar!/:na]
+2026-05-14T16:14:19.516076157Z [inf]  	at org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:76) ~[flyway-core-11.14.1.jar!/:na]
+2026-05-14T16:14:19.516085554Z [inf]  	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:142) ~[flyway-core-11.14.1.jar!/:na]
+2026-05-14T16:14:19.516089451Z [inf]  	at org.flywaydb.core.Flyway.migrate(Flyway.java:186) ~[flyway-core-11.14.1.jar!/:na]
+2026-05-14T16:14:19.516092801Z [inf]  	at org.springframework.boot.flyway.autoconfigure.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:67) ~[spring-boot-flyway-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:19.516095726Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1864) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.516098601Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1813) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:19.516101409Z [inf]  	... 126 common frames omitted
+2026-05-14T16:14:19.516104165Z [inf]  Caused by: org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2026-05-14T16:14:19.518067547Z [inf]  	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:57) ~[postgresql-42.7.10.jar!/:42.7.10]
+2026-05-14T16:14:19.518073091Z [inf]  	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:290) ~[postgresql-42.7.10.jar!/:42.7.10]
+2026-05-14T16:14:19.518077255Z [inf]  	at org.postgresql.Driver.makeConnection(Driver.java:448) ~[postgresql-42.7.10.jar!/:42.7.10]
+2026-05-14T16:14:19.518082234Z [inf]  	at org.postgresql.Driver.connect(Driver.java:298) ~[postgresql-42.7.10.jar!/:42.7.10]
+2026-05-14T16:14:19.518086277Z [inf]  	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-7.0.2.jar!/:na]
+2026-05-14T16:14:19.518090997Z [inf]  	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373) ~[HikariCP-7.0.2.jar!/:na]
+2026-05-14T16:14:19.518095189Z [inf]  	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210) ~[HikariCP-7.0.2.jar!/:na]
+2026-05-14T16:14:19.518099834Z [inf]  	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-7.0.2.jar!/:na]
+2026-05-14T16:14:19.518103940Z [inf]  	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576) ~[HikariCP-7.0.2.jar!/:na]
+2026-05-14T16:14:19.518108530Z [inf]  	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97) ~[HikariCP-7.0.2.jar!/:na]
+2026-05-14T16:14:19.518112827Z [inf]  	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111) ~[HikariCP-7.0.2.jar!/:na]
+2026-05-14T16:14:19.518246343Z [inf]  	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:65) ~[flyway-core-11.14.1.jar!/:na]
+2026-05-14T16:14:19.518252446Z [inf]  	... 132 common frames omitted
+2026-05-14T16:14:19.518257204Z [inf]  Caused by: java.net.ConnectException: Connection refused
+2026-05-14T16:14:19.518261673Z [inf]  	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+2026-05-14T16:14:19.518266228Z [inf]  	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source) ~[na:na]
+2026-05-14T16:14:19.521763682Z [inf]  	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(Unknown Source) ~[na:na]
+2026-05-14T16:14:19.521771592Z [inf]  	at java.base/sun.nio.ch.NioSocketImpl.connect(Unknown Source) ~[na:na]
+2026-05-14T16:14:19.521775906Z [inf]  	at java.base/java.net.SocksSocketImpl.connect(Unknown Source) ~[na:na]
+2026-05-14T16:14:19.521779864Z [inf]  	at java.base/java.net.Socket.connect(Unknown Source) ~[na:na]
+2026-05-14T16:14:19.521785829Z [inf]  	at org.postgresql.core.PGStream.createSocket(PGStream.java:261) ~[postgresql-42.7.10.jar!/:42.7.10]
+2026-05-14T16:14:19.521791229Z [inf]  	at org.postgresql.core.PGStream.<init>(PGStream.java:122) ~[postgresql-42.7.10.jar!/:42.7.10]
+2026-05-14T16:14:19.521795282Z [inf]  	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:146) ~[postgresql-42.7.10.jar!/:42.7.10]
+2026-05-14T16:14:19.521799518Z [inf]  	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:289) ~[postgresql-42.7.10.jar!/:42.7.10]
+2026-05-14T16:14:19.521803493Z [inf]  	... 144 common frames omitted
+2026-05-14T16:14:19.521808793Z [inf]  
+2026-05-14T16:14:22.277810300Z [inf]  
+2026-05-14T16:14:22.277841131Z [inf]  
+2026-05-14T16:14:22.277849661Z [inf]    .   ____          _            __ _ _
+2026-05-14T16:14:22.277854070Z [inf]   /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+2026-05-14T16:14:22.277858336Z [inf]  ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+2026-05-14T16:14:22.277862097Z [inf]   \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+2026-05-14T16:14:22.277866627Z [inf]    '  |____| .__|_| |_|_| |_\__, | / / / /
+2026-05-14T16:14:22.277870107Z [inf]   =========|_|==============|___/=/_/_/_/
+2026-05-14T16:14:22.277874555Z [inf]  
+2026-05-14T16:14:22.277879850Z [inf]   :: Spring Boot ::                (v4.0.6)
+2026-05-14T16:14:22.444332911Z [inf]  2026-05-14T16:14:22.437Z  INFO 1 --- [mvp] [           main] com.identio.mvp.MvpApplication           : Starting MvpApplication v0.0.1-SNAPSHOT using Java 21.0.11 with PID 1 (/app/app.jar started by spring in /app)
+2026-05-14T16:14:22.444337761Z [inf]  2026-05-14T16:14:22.440Z  INFO 1 --- [mvp] [           main] com.identio.mvp.MvpApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-05-14T16:14:24.467387244Z [inf]  2026-05-14T16:14:24.461Z  INFO 1 --- [mvp] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-14T16:14:24.579374339Z [inf]  2026-05-14T16:14:24.576Z  INFO 1 --- [mvp] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 105 ms. Found 2 JPA repository interfaces.
+2026-05-14T16:14:25.984164543Z [inf]  2026-05-14T16:14:25.975Z  INFO 1 --- [mvp] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-05-14T16:14:26.064096914Z [inf]  2026-05-14T16:14:26.046Z  INFO 1 --- [mvp] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-14T16:14:26.064100619Z [inf]  2026-05-14T16:14:26.047Z  INFO 1 --- [mvp] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-14T16:14:26.246341894Z [inf]  2026-05-14T16:14:26.240Z  INFO 1 --- [mvp] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 3698 ms
+2026-05-14T16:14:27.128566982Z [inf]  2026-05-14T16:14:27.125Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classpath resources at 'classpath:db/callback' ...
+2026-05-14T16:14:27.128572531Z [inf]  2026-05-14T16:14:27.125Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Determining location urls for classpath:db/callback using ClassLoader TomcatEmbeddedWebappClassLoader
+2026-05-14T16:14:27.128575985Z [inf]    context: ROOT
+2026-05-14T16:14:27.128579358Z [inf]    delegate: true
+2026-05-14T16:14:27.128582283Z [inf]  ----------> Parent Classloader:
+2026-05-14T16:14:27.128585926Z [inf]  org.springframework.boot.loader.launch.LaunchedClassLoader@16b98e56
+2026-05-14T16:14:27.128588967Z [inf]   ...
+2026-05-14T16:14:27.128592214Z [inf]  2026-05-14T16:14:27.125Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Unable to resolve location classpath:db/callback.
+2026-05-14T16:14:27.128595896Z [inf]  2026-05-14T16:14:27.125Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classpath resources at 'classpath:db/migration' ...
+2026-05-14T16:14:27.128599071Z [inf]  2026-05-14T16:14:27.126Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Determining location urls for classpath:db/migration using ClassLoader TomcatEmbeddedWebappClassLoader
+2026-05-14T16:14:27.128602272Z [inf]    context: ROOT
+2026-05-14T16:14:27.128605421Z [inf]    delegate: true
+2026-05-14T16:14:27.128615967Z [inf]  ----------> Parent Classloader:
+2026-05-14T16:14:27.128619581Z [inf]  org.springframework.boot.loader.launch.LaunchedClassLoader@16b98e56
+2026-05-14T16:14:27.128624606Z [inf]   ...
+2026-05-14T16:14:27.128627470Z [inf]  2026-05-14T16:14:27.126Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning URL: jar:nested:/app/app.jar/!BOOT-INF/classes/!/db/migration
+2026-05-14T16:14:27.140661384Z [inf]  2026-05-14T16:14:27.137Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning URL: jar:nested:/app/app.jar/!BOOT-INF/classes/!/db/migration
+2026-05-14T16:14:27.140667579Z [inf]  2026-05-14T16:14:27.135Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/
+2026-05-14T16:14:27.140668357Z [inf]  2026-05-14T16:14:27.137Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/
+2026-05-14T16:14:27.140673493Z [inf]  2026-05-14T16:14:27.137Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/V1__init_roles.sql
+2026-05-14T16:14:27.140679038Z [inf]  2026-05-14T16:14:27.136Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/V1__init_roles.sql
+2026-05-14T16:14:27.140679424Z [inf]  2026-05-14T16:14:27.137Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/V2__create_users_table.sql
+2026-05-14T16:14:27.140685012Z [inf]  2026-05-14T16:14:27.136Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/V2__create_users_table.sql
+2026-05-14T16:14:27.140689099Z [inf]  2026-05-14T16:14:27.136Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classpath resources at 'classpath:db/migration' ...
+2026-05-14T16:14:27.140693526Z [inf]  2026-05-14T16:14:27.136Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Determining location urls for classpath:db/migration using ClassLoader TomcatEmbeddedWebappClassLoader
+2026-05-14T16:14:27.140698011Z [inf]    context: ROOT
+2026-05-14T16:14:27.140702292Z [inf]    delegate: true
+2026-05-14T16:14:27.140706301Z [inf]  ----------> Parent Classloader:
+2026-05-14T16:14:27.140710281Z [inf]  org.springframework.boot.loader.launch.LaunchedClassLoader@16b98e56
+2026-05-14T16:14:27.140714490Z [inf]   ...
+2026-05-14T16:14:27.141727089Z [inf]  2026-05-14T16:14:27.137Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classes at classpath:db/migration
+2026-05-14T16:14:27.141731421Z [inf]  2026-05-14T16:14:27.140Z  INFO 1 --- [mvp] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-14T16:14:28.208001962Z [inf]  2026-05-14T16:14:28.203Z ERROR 1 --- [mvp] [           main] t.s.DeferredServletContainerInitializers : Error starting Tomcat context. Exception: org.springframework.beans.factory.BeanCreationException. Message: Error creating bean with name 'grpcServlet' defined in class path resource [org/springframework/boot/grpc/server/autoconfigure/GrpcServerFactoryAutoConfiguration$GrpcServletConfiguration.class]: Failed to instantiate [org.springframework.boot.web.servlet.ServletRegistrationBean]: Factory method 'grpcServlet' threw exception with message: Error creating bean with name 'authServiceGrpcImpl' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/com/identio/mvp/interfaces/auth/grpc/AuthServiceGrpcImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'authUseCaseImpl' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/com/identio/mvp/application/auth/usecases/AuthUseCaseImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepository' defined in com.identio.mvp.domain.user.repositories.UserRepository defined in @EnableJpaRepositories declared on DataJpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+2026-05-14T16:14:28.231755229Z [inf]  2026-05-14T16:14:28.225Z  INFO 1 --- [mvp] [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-05-14T16:14:28.234436873Z [inf]  2026-05-14T16:14:28.233Z  WARN 1 --- [mvp] [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2026-05-14T16:14:28.241439097Z [inf]  2026-05-14T16:14:28.239Z  INFO 1 --- [mvp] [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+2026-05-14T16:14:28.241442719Z [inf]  
+2026-05-14T16:14:28.241445851Z [inf]  Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-05-14T16:14:28.284027089Z [inf]  2026-05-14T16:14:28.271Z ERROR 1 --- [mvp] [           main] o.s.boot.SpringApplication               : Application run failed
+2026-05-14T16:14:28.284034649Z [inf]  
+2026-05-14T16:14:28.284038954Z [inf]  org.springframework.context.ApplicationContextException: Unable to start web server
+2026-05-14T16:14:28.284042661Z [inf]  	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:167) ~[spring-boot-web-server-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:28.284046790Z [inf]  	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:615) ~[spring-context-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.284053075Z [inf]  	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:28.284057145Z [inf]  	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:28.284060648Z [inf]  	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:28.284063865Z [inf]  	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:28.284067677Z [inf]  	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:28.284071452Z [inf]  	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:28.284074883Z [inf]  	at com.identio.mvp.MvpApplication.main(MvpApplication.java:10) ~[!/:0.0.1-SNAPSHOT]
+2026-05-14T16:14:28.284078129Z [inf]  	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source) ~[na:na]
+2026-05-14T16:14:28.285329050Z [inf]  	... 13 common frames omitted
+2026-05-14T16:14:28.285335747Z [inf]  Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'grpcServlet' defined in class path resource [org/springframework/boot/grpc/server/autoconfigure/GrpcServerFactoryAutoConfiguration$GrpcServletConfiguration.class]: Failed to instantiate [org.springframework.boot.web.servlet.ServletRegistrationBean]: Factory method 'grpcServlet' threw exception with message: Error creating bean with name 'authServiceGrpcImpl' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/com/identio/mvp/interfaces/auth/grpc/AuthServiceGrpcImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'authUseCaseImpl' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/com/identio/mvp/application/auth/usecases/AuthUseCaseImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepository' defined in com.identio.mvp.domain.user.repositories.UserRepository defined in @EnableJpaRepositories declared on DataJpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+2026-05-14T16:14:28.285342128Z [inf]  	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+2026-05-14T16:14:28.285348594Z [inf]  	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:106) ~[app.jar:0.0.1-SNAPSHOT]
+2026-05-14T16:14:28.285352045Z [inf]  	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:64) ~[app.jar:0.0.1-SNAPSHOT]
+2026-05-14T16:14:28.285356556Z [inf]  	at org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:40) ~[app.jar:0.0.1-SNAPSHOT]
+2026-05-14T16:14:28.285359596Z [inf]  Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+2026-05-14T16:14:28.285362331Z [inf]  	at org.springframework.boot.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:150) ~[spring-boot-tomcat-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:28.285365860Z [inf]  	at org.springframework.boot.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:110) ~[spring-boot-tomcat-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:28.285369628Z [inf]  	at org.springframework.boot.tomcat.servlet.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:408) ~[spring-boot-tomcat-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:28.285372521Z [inf]  	at org.springframework.boot.tomcat.servlet.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:166) ~[spring-boot-tomcat-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:28.285375357Z [inf]  	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:190) ~[spring-boot-web-server-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:28.285377957Z [inf]  	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:164) ~[spring-boot-web-server-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:28.286566536Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:657) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.286571739Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:645) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.286574781Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1362) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.286577895Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1194) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.286580802Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.286585071Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.286588672Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.286591915Z [inf]  	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.286596637Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.286600584Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.286604269Z [inf]  	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:231) ~[spring-boot-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:28.290526162Z [inf]  	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:222) ~[spring-boot-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:28.290530405Z [inf]  	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addServletContextInitializerBeans(ServletContextInitializerBeans.java:107) ~[spring-boot-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:28.290534834Z [inf]  	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:96) ~[spring-boot-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:28.290538394Z [inf]  	at org.springframework.boot.web.context.servlet.WebApplicationContextInitializer.initialize(WebApplicationContextInitializer.java:53) ~[spring-boot-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:28.290542823Z [inf]  	at org.springframework.boot.tomcat.servlet.DeferredServletContainerInitializers.onStartup(DeferredServletContainerInitializers.java:55) ~[spring-boot-tomcat-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:28.290546315Z [inf]  	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4416) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:28.290549837Z [inf]  	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:28.290553477Z [inf]  	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1162) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:28.290556948Z [inf]  	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1158) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:28.290560638Z [inf]  	at java.base/java.util.concurrent.FutureTask.run(Unknown Source) ~[na:na]
+2026-05-14T16:14:28.290564136Z [inf]  	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:81) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:28.290567688Z [inf]  	at java.base/java.util.concurrent.AbstractExecutorService.submit(Unknown Source) ~[na:na]
+2026-05-14T16:14:28.290571075Z [inf]  	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:714) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:28.290574555Z [inf]  	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:780) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:28.290578185Z [inf]  	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:28.290581664Z [inf]  	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1162) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:28.290585074Z [inf]  	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1158) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:28.290588563Z [inf]  	at java.base/java.util.concurrent.FutureTask.run(Unknown Source) ~[na:na]
+2026-05-14T16:14:28.290592236Z [inf]  	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:81) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:28.290596147Z [inf]  	at java.base/java.util.concurrent.AbstractExecutorService.submit(Unknown Source) ~[na:na]
+2026-05-14T16:14:28.290599715Z [inf]  	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:714) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:28.290603209Z [inf]  	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:201) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:28.290606681Z [inf]  	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:28.290610081Z [inf]  	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:410) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:28.290613444Z [inf]  	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:28.299665699Z [inf]  	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:864) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:28.299673357Z [inf]  	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:28.299677125Z [inf]  	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:435) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:28.299680765Z [inf]  	at org.springframework.boot.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:131) ~[spring-boot-tomcat-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:28.299684983Z [inf]  	... 18 common frames omitted
+2026-05-14T16:14:28.299689146Z [inf]  Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.web.servlet.ServletRegistrationBean]: Factory method 'grpcServlet' threw exception with message: Error creating bean with name 'authServiceGrpcImpl' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/com/identio/mvp/interfaces/auth/grpc/AuthServiceGrpcImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'authUseCaseImpl' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/com/identio/mvp/application/auth/usecases/AuthUseCaseImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepository' defined in com.identio.mvp.domain.user.repositories.UserRepository defined in @EnableJpaRepositories declared on DataJpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+2026-05-14T16:14:28.299693677Z [inf]  	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:183) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.299697747Z [inf]  	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:72) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.300478286Z [inf]  Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authServiceGrpcImpl' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/com/identio/mvp/interfaces/auth/grpc/AuthServiceGrpcImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'authUseCaseImpl' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/com/identio/mvp/application/auth/usecases/AuthUseCaseImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepository' defined in com.identio.mvp.domain.user.repositories.UserRepository defined in @EnableJpaRepositories declared on DataJpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+2026-05-14T16:14:28.300483427Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.300484499Z [inf]  	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:152) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.300487360Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.300491518Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.300491736Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1382) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.300496179Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1221) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.300497322Z [inf]  	... 57 common frames omitted
+2026-05-14T16:14:28.301284488Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.301290030Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.301293181Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.301296230Z [inf]  	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.301299110Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.301302079Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.301304827Z [inf]  	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansWithAnnotation(DefaultListableBeanFactory.java:791) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.301307487Z [inf]  	at org.springframework.context.support.AbstractApplicationContext.getBeansWithAnnotation(AbstractApplicationContext.java:1471) ~[spring-context-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.301310322Z [inf]  	at org.springframework.grpc.internal.ApplicationContextBeanLookupUtils.getOrderedBeansWithAnnotation(ApplicationContextBeanLookupUtils.java:66) ~[spring-grpc-core-1.0.3.jar!/:1.0.3]
+2026-05-14T16:14:28.301313120Z [inf]  	at org.springframework.grpc.server.service.DefaultGrpcServiceDiscoverer.listServiceNames(DefaultGrpcServiceDiscoverer.java:57) ~[spring-grpc-core-1.0.3.jar!/:1.0.3]
+2026-05-14T16:14:28.302096219Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1382) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.302105067Z [inf]  	at org.springframework.boot.grpc.server.autoconfigure.GrpcServerFactoryAutoConfiguration$GrpcServletConfiguration.grpcServlet(GrpcServerFactoryAutoConfiguration.java:84) ~[spring-grpc-server-spring-boot-autoconfigure-1.0.3.jar!/:1.0.3]
+2026-05-14T16:14:28.302113648Z [inf]  	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source) ~[na:na]
+2026-05-14T16:14:28.302120162Z [inf]  	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+2026-05-14T16:14:28.302124912Z [inf]  	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:155) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.302129885Z [inf]  	... 60 common frames omitted
+2026-05-14T16:14:28.302134484Z [inf]  Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authUseCaseImpl' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/com/identio/mvp/application/auth/usecases/AuthUseCaseImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepository' defined in com.identio.mvp.domain.user.repositories.UserRepository defined in @EnableJpaRepositories declared on DataJpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+2026-05-14T16:14:28.302139591Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.302143653Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.303062144Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1221) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.303068602Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.303072699Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.303076647Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.303082904Z [inf]  	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.303087015Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.303091254Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.303095393Z [inf]  	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:229) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.303099260Z [inf]  	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1762) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.303102639Z [inf]  	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1651) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.306340791Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:912) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.306347089Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.306351418Z [inf]  	... 77 common frames omitted
+2026-05-14T16:14:28.306354880Z [inf]  Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userRepository' defined in com.identio.mvp.domain.user.repositories.UserRepository defined in @EnableJpaRepositories declared on DataJpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+2026-05-14T16:14:28.306357934Z [inf]  	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:377) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.306361006Z [inf]  	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.306364310Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1712) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.306367410Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1461) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.306370313Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.306373398Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.307430787Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.307436336Z [inf]  	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.307440331Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.307443937Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.307447292Z [inf]  	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveBean(DefaultListableBeanFactory.java:1225) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.307452882Z [inf]  	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1704) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.307456902Z [inf]  	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1651) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.307460731Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:912) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.307464513Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.307468194Z [inf]  	... 91 common frames omitted
+2026-05-14T16:14:28.307471770Z [inf]  Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jpaSharedEM_entityManagerFactory': Cannot resolve reference to bean 'entityManagerFactory' while setting constructor argument
+2026-05-14T16:14:28.308486839Z [inf]  	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:377) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.308491883Z [inf]  	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.308496015Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:691) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.308499738Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:513) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.308504211Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1362) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.308508076Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1194) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.308511546Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.308515215Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.308523287Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.308527058Z [inf]  	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.309733697Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.309745637Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.309750741Z [inf]  	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:356) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.309754482Z [inf]  	... 105 common frames omitted
+2026-05-14T16:14:28.309762426Z [inf]  Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2026-05-14T16:14:28.309766750Z [inf]  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-05-14T16:14:28.309771470Z [inf]  SQL State  : 08001
+2026-05-14T16:14:28.309775783Z [inf]  Error Code : 0
+2026-05-14T16:14:28.309785418Z [inf]  Message    : Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2026-05-14T16:14:28.309793594Z [inf]  
+2026-05-14T16:14:28.309798197Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1817) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.309814324Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.314883297Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.314889778Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.314893120Z [inf]  	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.314896722Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.314899659Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.314902438Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:309) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.314905470Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.314908253Z [inf]  	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.314911747Z [inf]  	... 117 common frames omitted
+2026-05-14T16:14:28.314915569Z [inf]  Caused by: org.flywaydb.core.internal.exception.sqlExceptions.FlywaySqlUnableToConnectToDbException: Unable to obtain connection from database: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2026-05-14T16:14:28.314919059Z [inf]  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-05-14T16:14:28.316536182Z [inf]  SQL State  : 08001
+2026-05-14T16:14:28.316539428Z [inf]  Error Code : 0
+2026-05-14T16:14:28.316542514Z [inf]  Message    : Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2026-05-14T16:14:28.316545443Z [inf]  
+2026-05-14T16:14:28.316548696Z [inf]  	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:70) ~[flyway-core-11.14.1.jar!/:na]
+2026-05-14T16:14:28.316551982Z [inf]  	at org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:76) ~[flyway-core-11.14.1.jar!/:na]
+2026-05-14T16:14:28.316556027Z [inf]  	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:142) ~[flyway-core-11.14.1.jar!/:na]
+2026-05-14T16:14:28.316559499Z [inf]  	at org.flywaydb.core.Flyway.migrate(Flyway.java:186) ~[flyway-core-11.14.1.jar!/:na]
+2026-05-14T16:14:28.316563618Z [inf]  	at org.springframework.boot.flyway.autoconfigure.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:67) ~[spring-boot-flyway-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:28.316567389Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1864) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.316571370Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1813) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:28.316575212Z [inf]  	... 126 common frames omitted
+2026-05-14T16:14:28.316579282Z [inf]  Caused by: org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2026-05-14T16:14:28.316583375Z [inf]  	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:373) ~[postgresql-42.7.10.jar!/:42.7.10]
+2026-05-14T16:14:28.318621490Z [inf]  Caused by: java.net.ConnectException: Connection refused
+2026-05-14T16:14:28.318630789Z [inf]  	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:57) ~[postgresql-42.7.10.jar!/:42.7.10]
+2026-05-14T16:14:28.318631052Z [inf]  	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+2026-05-14T16:14:28.318637369Z [inf]  	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source) ~[na:na]
+2026-05-14T16:14:28.318640947Z [inf]  	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:290) ~[postgresql-42.7.10.jar!/:42.7.10]
+2026-05-14T16:14:28.318645144Z [inf]  	at org.postgresql.Driver.makeConnection(Driver.java:448) ~[postgresql-42.7.10.jar!/:42.7.10]
+2026-05-14T16:14:28.318648218Z [inf]  	at org.postgresql.Driver.connect(Driver.java:298) ~[postgresql-42.7.10.jar!/:42.7.10]
+2026-05-14T16:14:28.318656446Z [inf]  	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-7.0.2.jar!/:na]
+2026-05-14T16:14:28.318659973Z [inf]  	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373) ~[HikariCP-7.0.2.jar!/:na]
+2026-05-14T16:14:28.318663800Z [inf]  	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210) ~[HikariCP-7.0.2.jar!/:na]
+2026-05-14T16:14:28.318666715Z [inf]  	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-7.0.2.jar!/:na]
+2026-05-14T16:14:28.318670249Z [inf]  	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576) ~[HikariCP-7.0.2.jar!/:na]
+2026-05-14T16:14:28.318674016Z [inf]  	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97) ~[HikariCP-7.0.2.jar!/:na]
+2026-05-14T16:14:28.318677605Z [inf]  	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111) ~[HikariCP-7.0.2.jar!/:na]
+2026-05-14T16:14:28.318681538Z [inf]  	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:65) ~[flyway-core-11.14.1.jar!/:na]
+2026-05-14T16:14:28.318685264Z [inf]  	... 132 common frames omitted
+2026-05-14T16:14:28.319774487Z [inf]  	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(Unknown Source) ~[na:na]
+2026-05-14T16:14:28.319780998Z [inf]  	at java.base/sun.nio.ch.NioSocketImpl.connect(Unknown Source) ~[na:na]
+2026-05-14T16:14:28.319785006Z [inf]  	at java.base/java.net.SocksSocketImpl.connect(Unknown Source) ~[na:na]
+2026-05-14T16:14:28.319788674Z [inf]  	at java.base/java.net.Socket.connect(Unknown Source) ~[na:na]
+2026-05-14T16:14:28.319792625Z [inf]  	at org.postgresql.core.PGStream.createSocket(PGStream.java:261) ~[postgresql-42.7.10.jar!/:42.7.10]
+2026-05-14T16:14:28.319796310Z [inf]  	at org.postgresql.core.PGStream.<init>(PGStream.java:122) ~[postgresql-42.7.10.jar!/:42.7.10]
+2026-05-14T16:14:28.319801880Z [inf]  	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:146) ~[postgresql-42.7.10.jar!/:42.7.10]
+2026-05-14T16:14:28.319807651Z [inf]  	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:289) ~[postgresql-42.7.10.jar!/:42.7.10]
+2026-05-14T16:14:28.319812867Z [inf]  	... 144 common frames omitted
+2026-05-14T16:14:28.319817184Z [inf]  
+2026-05-14T16:14:31.022084783Z [inf]  
+2026-05-14T16:14:31.022089854Z [inf]    .   ____          _            __ _ _
+2026-05-14T16:14:31.022095176Z [inf]   /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+2026-05-14T16:14:31.022098657Z [inf]  ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+2026-05-14T16:14:31.022102186Z [inf]   \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+2026-05-14T16:14:31.022105885Z [inf]    '  |____| .__|_| |_|_| |_\__, | / / / /
+2026-05-14T16:14:31.022110111Z [inf]   =========|_|==============|___/=/_/_/_/
+2026-05-14T16:14:31.022113844Z [inf]  
+2026-05-14T16:14:31.022117935Z [inf]   :: Spring Boot ::                (v4.0.6)
+2026-05-14T16:14:31.022121628Z [inf]  
+2026-05-14T16:14:31.100320116Z [inf]  2026-05-14T16:14:31.086Z  INFO 1 --- [mvp] [           main] com.identio.mvp.MvpApplication           : Starting MvpApplication v0.0.1-SNAPSHOT using Java 21.0.11 with PID 1 (/app/app.jar started by spring in /app)
+2026-05-14T16:14:31.100325774Z [inf]  2026-05-14T16:14:31.089Z  INFO 1 --- [mvp] [           main] com.identio.mvp.MvpApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-05-14T16:14:33.274522338Z [inf]  2026-05-14T16:14:33.268Z  INFO 1 --- [mvp] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-14T16:14:33.381939546Z [inf]  2026-05-14T16:14:33.377Z  INFO 1 --- [mvp] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 100 ms. Found 2 JPA repository interfaces.
+2026-05-14T16:14:35.042947424Z [inf]  2026-05-14T16:14:34.783Z  INFO 1 --- [mvp] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-05-14T16:14:35.042952658Z [inf]  2026-05-14T16:14:34.852Z  INFO 1 --- [mvp] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-14T16:14:35.042958307Z [inf]  2026-05-14T16:14:34.852Z  INFO 1 --- [mvp] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.21]
+2026-05-14T16:14:35.042963513Z [inf]  2026-05-14T16:14:34.970Z  INFO 1 --- [mvp] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 3712 ms
+2026-05-14T16:14:36.053896081Z [inf]  ----------> Parent Classloader:
+2026-05-14T16:14:36.053907470Z [inf]  org.springframework.boot.loader.launch.LaunchedClassLoader@16b98e56
+2026-05-14T16:14:36.053911783Z [inf]   ...
+2026-05-14T16:14:36.053915802Z [inf]  2026-05-14T16:14:35.856Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning URL: jar:nested:/app/app.jar/!BOOT-INF/classes/!/db/migration
+2026-05-14T16:14:36.053928582Z [inf]  2026-05-14T16:14:35.856Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classpath resources at 'classpath:db/callback' ...
+2026-05-14T16:14:36.053932876Z [inf]  2026-05-14T16:14:35.856Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Determining location urls for classpath:db/callback using ClassLoader TomcatEmbeddedWebappClassLoader
+2026-05-14T16:14:36.053937389Z [inf]    context: ROOT
+2026-05-14T16:14:36.053941938Z [inf]    delegate: true
+2026-05-14T16:14:36.053946135Z [inf]  ----------> Parent Classloader:
+2026-05-14T16:14:36.053950276Z [inf]  org.springframework.boot.loader.launch.LaunchedClassLoader@16b98e56
+2026-05-14T16:14:36.053954496Z [inf]   ...
+2026-05-14T16:14:36.053958914Z [inf]  2026-05-14T16:14:35.856Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Unable to resolve location classpath:db/callback.
+2026-05-14T16:14:36.053963495Z [inf]  2026-05-14T16:14:35.856Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classpath resources at 'classpath:db/migration' ...
+2026-05-14T16:14:36.053968165Z [inf]  2026-05-14T16:14:35.856Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Determining location urls for classpath:db/migration using ClassLoader TomcatEmbeddedWebappClassLoader
+2026-05-14T16:14:36.053972475Z [inf]    context: ROOT
+2026-05-14T16:14:36.053977772Z [inf]    delegate: true
+2026-05-14T16:14:36.054819551Z [inf]  2026-05-14T16:14:35.859Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/
+2026-05-14T16:14:36.054824395Z [inf]  2026-05-14T16:14:35.859Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/V1__init_roles.sql
+2026-05-14T16:14:36.054828315Z [inf]  2026-05-14T16:14:35.859Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/V2__create_users_table.sql
+2026-05-14T16:14:36.054832335Z [inf]  2026-05-14T16:14:35.860Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classpath resources at 'classpath:db/migration' ...
+2026-05-14T16:14:36.054836152Z [inf]  2026-05-14T16:14:35.860Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Determining location urls for classpath:db/migration using ClassLoader TomcatEmbeddedWebappClassLoader
+2026-05-14T16:14:36.054840527Z [inf]    context: ROOT
+2026-05-14T16:14:36.054844344Z [inf]    delegate: true
+2026-05-14T16:14:36.054847795Z [inf]  ----------> Parent Classloader:
+2026-05-14T16:14:36.054851435Z [inf]  org.springframework.boot.loader.launch.LaunchedClassLoader@16b98e56
+2026-05-14T16:14:36.054855015Z [inf]   ...
+2026-05-14T16:14:36.054858815Z [inf]  2026-05-14T16:14:35.860Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning URL: jar:nested:/app/app.jar/!BOOT-INF/classes/!/db/migration
+2026-05-14T16:14:36.054861948Z [inf]  2026-05-14T16:14:35.860Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/
+2026-05-14T16:14:36.054865448Z [inf]  2026-05-14T16:14:35.860Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/V1__init_roles.sql
+2026-05-14T16:14:36.054869046Z [inf]  2026-05-14T16:14:35.860Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/V2__create_users_table.sql
+2026-05-14T16:14:36.055901459Z [inf]  2026-05-14T16:14:35.860Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classes at classpath:db/migration
+2026-05-14T16:14:36.055906084Z [inf]  2026-05-14T16:14:35.863Z  INFO 1 --- [mvp] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-14T16:14:37.084450423Z [inf]  2026-05-14T16:14:36.964Z ERROR 1 --- [mvp] [           main] t.s.DeferredServletContainerInitializers : Error starting Tomcat context. Exception: org.springframework.beans.factory.BeanCreationException. Message: Error creating bean with name 'grpcServlet' defined in class path resource [org/springframework/boot/grpc/server/autoconfigure/GrpcServerFactoryAutoConfiguration$GrpcServletConfiguration.class]: Failed to instantiate [org.springframework.boot.web.servlet.ServletRegistrationBean]: Factory method 'grpcServlet' threw exception with message: Error creating bean with name 'authServiceGrpcImpl' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/com/identio/mvp/interfaces/auth/grpc/AuthServiceGrpcImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'authUseCaseImpl' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/com/identio/mvp/application/auth/usecases/AuthUseCaseImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepository' defined in com.identio.mvp.domain.user.repositories.UserRepository defined in @EnableJpaRepositories declared on DataJpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+2026-05-14T16:14:37.084454474Z [inf]  2026-05-14T16:14:36.984Z  INFO 1 --- [mvp] [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-05-14T16:14:37.084459378Z [inf]  2026-05-14T16:14:36.987Z  WARN 1 --- [mvp] [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2026-05-14T16:14:37.084464197Z [inf]  2026-05-14T16:14:36.993Z  INFO 1 --- [mvp] [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+2026-05-14T16:14:37.085601052Z [inf]  
+2026-05-14T16:14:37.085606491Z [inf]  Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-05-14T16:14:37.085612111Z [inf]  2026-05-14T16:14:37.057Z ERROR 1 --- [mvp] [           main] o.s.boot.SpringApplication               : Application run failed
+2026-05-14T16:14:37.085618128Z [inf]  
+2026-05-14T16:14:37.085623601Z [inf]  org.springframework.context.ApplicationContextException: Unable to start web server
+2026-05-14T16:14:37.085628602Z [inf]  	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:167) ~[spring-boot-web-server-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:37.085633545Z [inf]  	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:615) ~[spring-context-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.085638303Z [inf]  	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:37.085643308Z [inf]  	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:37.085649437Z [inf]  	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:37.085654268Z [inf]  	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:37.085659799Z [inf]  	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:37.085664724Z [inf]  	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:37.085669360Z [inf]  	at com.identio.mvp.MvpApplication.main(MvpApplication.java:10) ~[!/:0.0.1-SNAPSHOT]
+2026-05-14T16:14:37.087273833Z [inf]  	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source) ~[na:na]
+2026-05-14T16:14:37.087281521Z [inf]  	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+2026-05-14T16:14:37.087285957Z [inf]  	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:106) ~[app.jar:0.0.1-SNAPSHOT]
+2026-05-14T16:14:37.087290354Z [inf]  	at org.springframework.boot.loader.launch.Launcher.launch(Launcher.java:64) ~[app.jar:0.0.1-SNAPSHOT]
+2026-05-14T16:14:37.087295850Z [inf]  	at org.springframework.boot.loader.launch.JarLauncher.main(JarLauncher.java:40) ~[app.jar:0.0.1-SNAPSHOT]
+2026-05-14T16:14:37.087301085Z [inf]  Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+2026-05-14T16:14:37.087305601Z [inf]  	at org.springframework.boot.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:150) ~[spring-boot-tomcat-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:37.087310688Z [inf]  	at org.springframework.boot.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:110) ~[spring-boot-tomcat-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:37.087314368Z [inf]  	at org.springframework.boot.tomcat.servlet.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:408) ~[spring-boot-tomcat-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:37.087318299Z [inf]  	at org.springframework.boot.tomcat.servlet.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:166) ~[spring-boot-tomcat-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:37.087321962Z [inf]  	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:190) ~[spring-boot-web-server-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:37.087325652Z [inf]  	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:164) ~[spring-boot-web-server-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:37.092473158Z [inf]  	... 13 common frames omitted
+2026-05-14T16:14:37.092479250Z [inf]  Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'grpcServlet' defined in class path resource [org/springframework/boot/grpc/server/autoconfigure/GrpcServerFactoryAutoConfiguration$GrpcServletConfiguration.class]: Failed to instantiate [org.springframework.boot.web.servlet.ServletRegistrationBean]: Factory method 'grpcServlet' threw exception with message: Error creating bean with name 'authServiceGrpcImpl' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/com/identio/mvp/interfaces/auth/grpc/AuthServiceGrpcImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'authUseCaseImpl' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/com/identio/mvp/application/auth/usecases/AuthUseCaseImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepository' defined in com.identio.mvp.domain.user.repositories.UserRepository defined in @EnableJpaRepositories declared on DataJpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+2026-05-14T16:14:37.092483407Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:657) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.092486883Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:645) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.092490560Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1362) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.092494551Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1194) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.094250216Z [inf]  	at org.springframework.boot.web.context.servlet.WebApplicationContextInitializer.initialize(WebApplicationContextInitializer.java:53) ~[spring-boot-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:37.094259477Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.094268801Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.094272279Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.094279126Z [inf]  	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:231) ~[spring-boot-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:37.094280590Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.094287943Z [inf]  	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.094288324Z [inf]  	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:222) ~[spring-boot-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:37.094294487Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.094297471Z [inf]  	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addServletContextInitializerBeans(ServletContextInitializerBeans.java:107) ~[spring-boot-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:37.094301546Z [inf]  	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:96) ~[spring-boot-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:37.094997301Z [inf]  	at org.springframework.boot.tomcat.servlet.DeferredServletContainerInitializers.onStartup(DeferredServletContainerInitializers.java:55) ~[spring-boot-tomcat-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:37.095004113Z [inf]  	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4416) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:37.095008184Z [inf]  	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:37.095012521Z [inf]  	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1162) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:37.095016239Z [inf]  	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1158) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:37.095020231Z [inf]  	at java.base/java.util.concurrent.FutureTask.run(Unknown Source) ~[na:na]
+2026-05-14T16:14:37.095026923Z [inf]  	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:81) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:37.095030790Z [inf]  	at java.base/java.util.concurrent.AbstractExecutorService.submit(Unknown Source) ~[na:na]
+2026-05-14T16:14:37.095034214Z [inf]  	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:714) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:37.095038283Z [inf]  	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:780) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:37.095043121Z [inf]  	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:37.095046573Z [inf]  	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1162) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:37.095961069Z [inf]  	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:435) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:37.095969616Z [inf]  	at org.springframework.boot.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:131) ~[spring-boot-tomcat-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:37.095976707Z [inf]  	... 18 common frames omitted
+2026-05-14T16:14:37.095980921Z [inf]  Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.web.servlet.ServletRegistrationBean]: Factory method 'grpcServlet' threw exception with message: Error creating bean with name 'authServiceGrpcImpl' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/com/identio/mvp/interfaces/auth/grpc/AuthServiceGrpcImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'authUseCaseImpl' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/com/identio/mvp/application/auth/usecases/AuthUseCaseImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepository' defined in com.identio.mvp.domain.user.repositories.UserRepository defined in @EnableJpaRepositories declared on DataJpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+2026-05-14T16:14:37.095989927Z [inf]  	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1158) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:37.095994263Z [inf]  	at java.base/java.util.concurrent.FutureTask.run(Unknown Source) ~[na:na]
+2026-05-14T16:14:37.095998147Z [inf]  	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:81) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:37.096002415Z [inf]  	at java.base/java.util.concurrent.AbstractExecutorService.submit(Unknown Source) ~[na:na]
+2026-05-14T16:14:37.096006327Z [inf]  	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:714) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:37.096015414Z [inf]  	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:201) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:37.096020919Z [inf]  	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:37.096025256Z [inf]  	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:410) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:37.096029374Z [inf]  	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:37.096033959Z [inf]  	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:864) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:37.096037758Z [inf]  	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:164) ~[tomcat-embed-core-11.0.21.jar!/:na]
+2026-05-14T16:14:37.096880542Z [inf]  	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:183) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.096887871Z [inf]  	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:72) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.096893062Z [inf]  	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:152) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.096898085Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.096902139Z [inf]  	... 57 common frames omitted
+2026-05-14T16:14:37.096908655Z [inf]  Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authServiceGrpcImpl' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/com/identio/mvp/interfaces/auth/grpc/AuthServiceGrpcImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'authUseCaseImpl' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/com/identio/mvp/application/auth/usecases/AuthUseCaseImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepository' defined in com.identio.mvp.domain.user.repositories.UserRepository defined in @EnableJpaRepositories declared on DataJpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+2026-05-14T16:14:37.096912982Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.096917055Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.097864761Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1382) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.097873125Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1221) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.097877434Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.097880987Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.097885243Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.097889245Z [inf]  	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.097898693Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.097902633Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.097906734Z [inf]  	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansWithAnnotation(DefaultListableBeanFactory.java:791) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.097910982Z [inf]  	at org.springframework.context.support.AbstractApplicationContext.getBeansWithAnnotation(AbstractApplicationContext.java:1471) ~[spring-context-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.098718157Z [inf]  	at org.springframework.grpc.internal.ApplicationContextBeanLookupUtils.getOrderedBeansWithAnnotation(ApplicationContextBeanLookupUtils.java:66) ~[spring-grpc-core-1.0.3.jar!/:1.0.3]
+2026-05-14T16:14:37.098722415Z [inf]  	at org.springframework.grpc.server.service.DefaultGrpcServiceDiscoverer.listServiceNames(DefaultGrpcServiceDiscoverer.java:57) ~[spring-grpc-core-1.0.3.jar!/:1.0.3]
+2026-05-14T16:14:37.098727026Z [inf]  	at org.springframework.boot.grpc.server.autoconfigure.GrpcServerFactoryAutoConfiguration$GrpcServletConfiguration.grpcServlet(GrpcServerFactoryAutoConfiguration.java:84) ~[spring-grpc-server-spring-boot-autoconfigure-1.0.3.jar!/:1.0.3]
+2026-05-14T16:14:37.098730688Z [inf]  	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source) ~[na:na]
+2026-05-14T16:14:37.098734344Z [inf]  	at java.base/java.lang.reflect.Method.invoke(Unknown Source) ~[na:na]
+2026-05-14T16:14:37.098738001Z [inf]  	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:155) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.098741563Z [inf]  	... 60 common frames omitted
+2026-05-14T16:14:37.098745008Z [inf]  Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authUseCaseImpl' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/com/identio/mvp/application/auth/usecases/AuthUseCaseImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepository' defined in com.identio.mvp.domain.user.repositories.UserRepository defined in @EnableJpaRepositories declared on DataJpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+2026-05-14T16:14:37.098748453Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.099627278Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.099635131Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1382) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.099652451Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1221) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.099657105Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.099662708Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.099667325Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.099671677Z [inf]  	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.099676435Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.099680790Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.099684900Z [inf]  	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:229) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.103529475Z [inf]  	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1762) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.103534189Z [inf]  	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1651) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.103537567Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:912) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.103541149Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.103545575Z [inf]  	... 77 common frames omitted
+2026-05-14T16:14:37.103548943Z [inf]  Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'userRepository' defined in com.identio.mvp.domain.user.repositories.UserRepository defined in @EnableJpaRepositories declared on DataJpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+2026-05-14T16:14:37.103552326Z [inf]  	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:377) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.103555903Z [inf]  	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.103559804Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1712) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.103563658Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1461) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.104545806Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:602) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.104552780Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.104556679Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.104561927Z [inf]  	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.104567392Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.104572339Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.104575430Z [inf]  	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveBean(DefaultListableBeanFactory.java:1225) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.104578579Z [inf]  	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1704) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.104581692Z [inf]  	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1651) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.104584933Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:912) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.104587954Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.105345909Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1194) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.105350491Z [inf]  	... 91 common frames omitted
+2026-05-14T16:14:37.105352527Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.105357517Z [inf]  Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jpaSharedEM_entityManagerFactory': Cannot resolve reference to bean 'entityManagerFactory' while setting constructor argument
+2026-05-14T16:14:37.105359596Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.105364693Z [inf]  	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:377) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.105368640Z [inf]  	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:135) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.105371766Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.resolveConstructorArguments(ConstructorResolver.java:691) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.105374802Z [inf]  	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:513) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.105377553Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1362) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.106406960Z [inf]  SQL State  : 08001
+2026-05-14T16:14:37.106414440Z [inf]  Error Code : 0
+2026-05-14T16:14:37.106418882Z [inf]  Message    : Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2026-05-14T16:14:37.106422445Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.106428827Z [inf]  	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.106433918Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.106440131Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:201) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.106444265Z [inf]  	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:356) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.106448534Z [inf]  	... 105 common frames omitted
+2026-05-14T16:14:37.106452210Z [inf]  Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'flywayInitializer' defined in class path resource [org/springframework/boot/flyway/autoconfigure/FlywayAutoConfiguration$FlywayConfiguration.class]: Unable to obtain connection from database: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2026-05-14T16:14:37.106455338Z [inf]  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-05-14T16:14:37.107692765Z [inf]  
+2026-05-14T16:14:37.107698399Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1817) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.107701355Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:603) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.107703996Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.107707813Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.107710730Z [inf]  	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.107713939Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.107717742Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.107722673Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:309) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.107726960Z [inf]  	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.107731100Z [inf]  	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:365) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.109300170Z [inf]  	at org.springframework.boot.flyway.autoconfigure.FlywayMigrationInitializer.afterPropertiesSet(FlywayMigrationInitializer.java:67) ~[spring-boot-flyway-4.0.6.jar!/:4.0.6]
+2026-05-14T16:14:37.109303974Z [inf]  	... 117 common frames omitted
+2026-05-14T16:14:37.109310924Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1864) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.109311069Z [inf]  Caused by: org.flywaydb.core.internal.exception.sqlExceptions.FlywaySqlUnableToConnectToDbException: Unable to obtain connection from database: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2026-05-14T16:14:37.109316607Z [inf]  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-05-14T16:14:37.109318746Z [inf]  	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1813) ~[spring-beans-7.0.7.jar!/:7.0.7]
+2026-05-14T16:14:37.109321175Z [inf]  SQL State  : 08001
+2026-05-14T16:14:37.109325490Z [inf]  Error Code : 0
+2026-05-14T16:14:37.109328388Z [inf]  Message    : Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2026-05-14T16:14:37.109331558Z [inf]  
+2026-05-14T16:14:37.109334573Z [inf]  	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:70) ~[flyway-core-11.14.1.jar!/:na]
+2026-05-14T16:14:37.109337590Z [inf]  	at org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:76) ~[flyway-core-11.14.1.jar!/:na]
+2026-05-14T16:14:37.109340553Z [inf]  	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:142) ~[flyway-core-11.14.1.jar!/:na]
+2026-05-14T16:14:37.109343635Z [inf]  	at org.flywaydb.core.Flyway.migrate(Flyway.java:186) ~[flyway-core-11.14.1.jar!/:na]
+2026-05-14T16:14:37.110558972Z [inf]  	... 126 common frames omitted
+2026-05-14T16:14:37.110564963Z [inf]  Caused by: org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2026-05-14T16:14:37.110571098Z [inf]  	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:373) ~[postgresql-42.7.10.jar!/:42.7.10]
+2026-05-14T16:14:37.110574375Z [inf]  	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:57) ~[postgresql-42.7.10.jar!/:42.7.10]
+2026-05-14T16:14:37.110578144Z [inf]  	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:290) ~[postgresql-42.7.10.jar!/:42.7.10]
+2026-05-14T16:14:37.110581781Z [inf]  	at org.postgresql.Driver.makeConnection(Driver.java:448) ~[postgresql-42.7.10.jar!/:42.7.10]
+2026-05-14T16:14:37.110585547Z [inf]  	at org.postgresql.Driver.connect(Driver.java:298) ~[postgresql-42.7.10.jar!/:42.7.10]
+2026-05-14T16:14:37.110589458Z [inf]  	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:144) ~[HikariCP-7.0.2.jar!/:na]
+2026-05-14T16:14:37.110592476Z [inf]  	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:373) ~[HikariCP-7.0.2.jar!/:na]
+2026-05-14T16:14:37.110595659Z [inf]  	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:210) ~[HikariCP-7.0.2.jar!/:na]
+2026-05-14T16:14:37.110599618Z [inf]  	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:488) ~[HikariCP-7.0.2.jar!/:na]
+2026-05-14T16:14:37.110602630Z [inf]  	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:576) ~[HikariCP-7.0.2.jar!/:na]
+2026-05-14T16:14:37.110605675Z [inf]  	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:97) ~[HikariCP-7.0.2.jar!/:na]
+2026-05-14T16:14:37.110608455Z [inf]  	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111) ~[HikariCP-7.0.2.jar!/:na]
+2026-05-14T16:14:37.112328702Z [inf]  	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:146) ~[postgresql-42.7.10.jar!/:42.7.10]
+2026-05-14T16:14:37.112333482Z [inf]  	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:65) ~[flyway-core-11.14.1.jar!/:na]
+2026-05-14T16:14:37.112333893Z [inf]  	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:289) ~[postgresql-42.7.10.jar!/:42.7.10]
+2026-05-14T16:14:37.112338821Z [inf]  	... 144 common frames omitted
+2026-05-14T16:14:37.112344146Z [inf]  
+2026-05-14T16:14:37.112344528Z [inf]  	... 132 common frames omitted
+2026-05-14T16:14:37.112350052Z [inf]  Caused by: java.net.ConnectException: Connection refused
+2026-05-14T16:14:37.112356331Z [inf]  	at java.base/sun.nio.ch.Net.pollConnect(Native Method) ~[na:na]
+2026-05-14T16:14:37.112360759Z [inf]  	at java.base/sun.nio.ch.Net.pollConnectNow(Unknown Source) ~[na:na]
+2026-05-14T16:14:37.112365145Z [inf]  	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(Unknown Source) ~[na:na]
+2026-05-14T16:14:37.112370277Z [inf]  	at java.base/sun.nio.ch.NioSocketImpl.connect(Unknown Source) ~[na:na]
+2026-05-14T16:14:37.112374638Z [inf]  	at java.base/java.net.SocksSocketImpl.connect(Unknown Source) ~[na:na]
+2026-05-14T16:14:37.112379316Z [inf]  	at java.base/java.net.Socket.connect(Unknown Source) ~[na:na]
+2026-05-14T16:14:37.112383786Z [inf]  	at org.postgresql.core.PGStream.createSocket(PGStream.java:261) ~[postgresql-42.7.10.jar!/:42.7.10]
+2026-05-14T16:14:37.112388311Z [inf]  	at org.postgresql.core.PGStream.<init>(PGStream.java:122) ~[postgresql-42.7.10.jar!/:42.7.10]
+2026-05-14T16:14:40.114080521Z [inf]   :: Spring Boot ::                (v4.0.6)
+2026-05-14T16:14:40.114089136Z [inf]  
+2026-05-14T16:14:40.114094444Z [inf]  2026-05-14T16:14:39.986Z  INFO 1 --- [mvp] [           main] com.identio.mvp.MvpApplication           : Starting MvpApplication v0.0.1-SNAPSHOT using Java 21.0.11 with PID 1 (/app/app.jar started by spring in /app)
+2026-05-14T16:14:40.114099112Z [inf]  2026-05-14T16:14:39.989Z  INFO 1 --- [mvp] [           main] com.identio.mvp.MvpApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-05-14T16:14:40.114246254Z [inf]  
+2026-05-14T16:14:40.114250217Z [inf]    .   ____          _            __ _ _
+2026-05-14T16:14:40.114253722Z [inf]   /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+2026-05-14T16:14:40.114257225Z [inf]  ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+2026-05-14T16:14:40.114260800Z [inf]   \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+2026-05-14T16:14:40.114264137Z [inf]    '  |____| .__|_| |_|_| |_\__, | / / / /
+2026-05-14T16:14:40.114267847Z [inf]   =========|_|==============|___/=/_/_/_/
+2026-05-14T16:14:40.114271532Z [inf]  
+2026-05-14T16:14:42.192976407Z [inf]  2026-05-14T16:14:42.185Z  INFO 1 --- [mvp] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-14T16:14:42.307104149Z [inf]  2026-05-14T16:14:42.304Z  INFO 1 --- [mvp] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 111 ms. Found 2 JPA repository interfaces.
+2026-05-14T16:14:44.145083915Z [inf]  2026-05-14T16:14:43.782Z  INFO 1 --- [mvp] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8080 (http)
+2026-05-14T16:14:44.145091501Z [inf]  2026-05-14T16:14:43.975Z  INFO 1 --- [mvp] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 3870 ms
+2026-05-14T16:14:45.111566198Z [inf]  2026-05-14T16:14:44.780Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classpath resources at 'classpath:db/callback' ...
+2026-05-14T16:14:45.111570900Z [inf]  2026-05-14T16:14:44.780Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Determining location urls for classpath:db/callback using ClassLoader TomcatEmbeddedWebappClassLoader
+2026-05-14T16:14:45.111579343Z [inf]    context: ROOT
+2026-05-14T16:14:45.111586253Z [inf]    delegate: true
+2026-05-14T16:14:45.111596706Z [inf]  ----------> Parent Classloader:
+2026-05-14T16:14:45.111600726Z [inf]  org.springframework.boot.loader.launch.LaunchedClassLoader@16b98e56
+2026-05-14T16:14:45.111605842Z [inf]   ...
+2026-05-14T16:14:45.111609915Z [inf]  2026-05-14T16:14:44.780Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Unable to resolve location classpath:db/callback.
+2026-05-14T16:14:45.111613695Z [inf]  2026-05-14T16:14:44.780Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classpath resources at 'classpath:db/migration' ...
+2026-05-14T16:14:45.111617185Z [inf]  2026-05-14T16:14:44.781Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Determining location urls for classpath:db/migration using ClassLoader TomcatEmbeddedWebappClassLoader
+2026-05-14T16:14:45.111621406Z [inf]    context: ROOT
+2026-05-14T16:14:45.111624993Z [inf]    delegate: true
+2026-05-14T16:14:45.111628198Z [inf]  ----------> Parent Classloader:
+2026-05-14T16:14:45.111632053Z [inf]  org.springframework.boot.loader.launch.LaunchedClassLoader@16b98e56
+2026-05-14T16:14:45.111635905Z [inf]   ...
+2026-05-14T16:14:45.111639349Z [inf]  2026-05-14T16:14:44.781Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning URL: jar:nested:/app/app.jar/!BOOT-INF/classes/!/db/migration
+2026-05-14T16:14:45.113047971Z [inf]  2026-05-14T16:14:44.783Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/
+2026-05-14T16:14:45.113053229Z [inf]  2026-05-14T16:14:44.784Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/V1__init_roles.sql
+2026-05-14T16:14:45.113057961Z [inf]  2026-05-14T16:14:44.784Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/V2__create_users_table.sql
+2026-05-14T16:14:45.113068482Z [inf]  2026-05-14T16:14:44.784Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classpath resources at 'classpath:db/migration' ...
+2026-05-14T16:14:45.113072660Z [inf]  2026-05-14T16:14:44.784Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Determining location urls for classpath:db/migration using ClassLoader TomcatEmbeddedWebappClassLoader
+2026-05-14T16:14:45.113077070Z [inf]    context: ROOT
+2026-05-14T16:14:45.113080940Z [inf]    delegate: true
+2026-05-14T16:14:45.113085314Z [inf]  ----------> Parent Classloader:
+2026-05-14T16:14:45.113089649Z [inf]  org.springframework.boot.loader.launch.LaunchedClassLoader@16b98e56
+2026-05-14T16:14:45.113093890Z [inf]   ...
+2026-05-14T16:14:45.113097509Z [inf]  2026-05-14T16:14:44.784Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning URL: jar:nested:/app/app.jar/!BOOT-INF/classes/!/db/migration
+2026-05-14T16:14:45.113101460Z [inf]  2026-05-14T16:14:44.785Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/
+2026-05-14T16:14:45.113105547Z [inf]  2026-05-14T16:14:44.785Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/V1__init_roles.sql
+2026-05-14T16:14:45.113109226Z [inf]  2026-05-14T16:14:44.785Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Found resource: db/migration/V2__create_users_table.sql
+2026-05-14T16:14:45.114359977Z [inf]  2026-05-14T16:14:44.785Z DEBUG 1 --- [mvp] [           main] o.f.c.i.s.classpath.ClassPathScanner     : Scanning for classes at classpath:db/migration
+2026-05-14T16:14:45.114364072Z [inf]  2026-05-14T16:14:44.787Z  INFO 1 --- [mvp] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-14T16:14:46.123760211Z [inf]  2026-05-14T16:14:45.888Z ERROR 1 --- [mvp] [           main] t.s.DeferredServletContainerInitializers : Error starting Tomcat context. Exception: org.springframework.beans.factory.BeanCreationException. Message: Error creating bean with name 'grpcServlet' defined in class path resource [org/springframework/boot/grpc/server/autoconfigure/GrpcServerFactoryAutoConfiguration$GrpcServletConfiguration.class]: Failed to instantiate [org.springframework.boot.web.servlet.ServletRegistrationBean]: Factory method 'grpcServlet' threw exception with message: Error creating bean with name 'authServiceGrpcImpl' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/com/identio/mvp/interfaces/auth/grpc/AuthServiceGrpcImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'authUseCaseImpl' defined in URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/com/identio/mvp/application/auth/usecases/AuthUseCaseImpl.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'userRepository' defined in com.identio.mvp.domain.user.repositories.UserRepository defined in @EnableJpaRepositories declared on DataJpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot resolve reference to bean 'jpaSharedEM_entityManagerFactory' while setting bean property 'entityManager'
+2026-05-14T16:14:46.123764829Z [inf]  2026-05-14T16:14:45.916Z  WARN 1 --- [mvp] [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
