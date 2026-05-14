@@ -2,7 +2,10 @@
   "$schema": "https://schema.railpack.com",
   "steps": {
     "build": {
-      "commands": ["./mvnw clean package -DskipTests"]
+      "commands": [
+        "cd mvp",
+        "./mvnw clean package -DskipTests"
+      ]
     }
   },
   "deploy": {
