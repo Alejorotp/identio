@@ -52,6 +52,7 @@ public class SecurityConfig {
                         .requestMatchers("/grpc.reflection.v1.ServerReflection/**", "/grpc.reflection.v1alpha.ServerReflection/**", "/grpc.reflection.v1alpha.ServerReflection/ServerReflectionInfo").permitAll()
                         .requestMatchers("/grpc.health.v1.Health/**").permitAll()
                         .requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
+                        .requestMatchers("/error").permitAll()
                         .anyRequest().authenticated()
                 )
                 .oauth2ResourceServer(oauth2 -> oauth2
