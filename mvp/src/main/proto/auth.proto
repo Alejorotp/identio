@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package identio.auth;
+
+option java_multiple_files = true;
+option java_package = "com.identio.mvp.interfaces.auth.grpc.auth";
+option java_outer_classname = "AuthProto";
+
+service AuthService {
+  rpc Register (RegisterRequest) returns (TokenResponse);
+  rpc Login (LoginRequest) returns (TokenResponse);
+  rpc Refresh (RefreshTokenRequest) returns (TokenResponse);
+}
+
+message RegisterRequest {
+  string full_name = 1;
+  string email = 2;
+  string password = 3;
+}
+
+message LoginRequest {
+  string email = 1;
+  string password = 2;
+}
+
+message RefreshTokenRequest {
+  string refresh_token = 1;
+}
+
+message TokenResponse {
+  string access_token = 1;
+  string refresh_token = 2;
+  string token_type = 3;
+}
