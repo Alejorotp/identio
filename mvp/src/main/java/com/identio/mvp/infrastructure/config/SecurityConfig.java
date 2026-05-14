@@ -49,7 +49,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/auth/**").permitAll()
                         .requestMatchers("/identio.auth.AuthService/**").permitAll()
-                        .requestMatchers("/grpc.reflection.v1.ServerReflection/**", "/grpc.health.v1.Health/**").permitAll()
+                        .requestMatchers("/grpc.reflection.v1.ServerReflection/**", "/grpc.reflection.v1alpha.ServerReflection/**", "/grpc.health.v1.Health/**").permitAll()
                         .requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
                         .anyRequest().authenticated()
                 )
