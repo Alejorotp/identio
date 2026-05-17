@@ -39,7 +39,7 @@ public class AuthUseCaseImpl implements AuthUseCase {
                 .passwordHash(passwordHashingService.encode(request.password())).status(UserStatus.ENROLLED)
                 .roles(Set.of(userRole)).build();
         userRepository.save(newUser);
-        return new TokenResponse(tokenService.generateAccessToken(newUser), tokenService.generateRefreshToken(newUser));
+        return new TokenResponse(newUser.getId(), tokenService.generateAccessToken(newUser), tokenService.generateRefreshToken(newUser));
     }
 
     @Override
@@ -51,7 +51,7 @@ public class AuthUseCaseImpl implements AuthUseCase {
             throw new BadCredentialsException("Invalid credentials");
         if (user.getStatus() != UserStatus.ENROLLED)
             throw new DisabledException("Account is inactive");
-        return new TokenResponse(tokenService.generateAccessToken(user), tokenService.generateRefreshToken(user));
+        return new TokenResponse(user.getId(), tokenService.generateAccessToken(user), tokenService.generateRefreshToken(user));
     }
 
     @Override
@@ -63,7 +63,7 @@ public class AuthUseCaseImpl implements AuthUseCase {
                     .orElseThrow(() -> new BadCredentialsException("User not found"));
             if (user.getStatus() != UserStatus.ENROLLED)
                 throw new DisabledException("Account is inactive");
-            return new TokenResponse(tokenService.generateAccessToken(user), tokenService.generateRefreshToken(user));
+            return new TokenResponse(user.getId(), tokenService.generateAccessToken(user), tokenService.generateRefreshToken(user));
         } catch (Exception e) {
             throw new BadCredentialsException("Invalid refresh token");
         }

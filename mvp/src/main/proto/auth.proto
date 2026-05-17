@@ -31,4 +31,5 @@ message TokenResponse {
   string access_token = 1;
   string refresh_token = 2;
   string token_type = 3;
+  string user_id = 4;
 }
