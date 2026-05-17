@@ -1,0 +1,64 @@
+syntax = "proto3";
+
+package identio.location;
+
+option java_multiple_files = true;
+option java_package = "com.identio.mvp.interfaces.location.grpc.location";
+option java_outer_classname = "LocationProto";
+
+service LocationService {
+    rpc GetAllLocations (GetAllLocationsRequest) returns (GetAllLocationsResponse);
+    rpc GetLocationById (GetLocationByIdRequest) returns (LocationResponse);
+    rpc CreateLocation (CreateLocationRequest) returns (LocationResponse);
+    rpc UpdateLocation (UpdateLocationRequest) returns (LocationResponse);
+    rpc DeleteLocation (DeleteLocationRequest) returns (DeleteLocationResponse);
+}
+
+message LocationResponse {
+    string id = 1;
+    string name = 2;
+    string address = 3;
+    double latitude = 4;
+    double longitude = 5;
+    string metadata_json = 6;
+}
+
+message GetAllLocationsRequest {
+    int32 page = 1;
+    int32 size = 2;
+}
+
+message GetAllLocationsResponse {
+    repeated LocationResponse locations = 1;
+    int32 total_pages = 2;
+    int64 total_elements = 3;
+}
+
+message GetLocationByIdRequest {
+    string id = 1;
+}
+
+message CreateLocationRequest {
+    string name = 1;
+    string address = 2;
+    double latitude = 3;
+    double longitude = 4;
+    string metadata_json = 5;
+}
+
+message UpdateLocationRequest {
+    string id = 1;
+    string name = 2;
+    string address = 3;
+    double latitude = 4;
+    double longitude = 5;
+    string metadata_json = 6;
+}
+
+message DeleteLocationRequest {
+    string id = 1;
+}
+
+message DeleteLocationResponse {
+    bool success = 1;
+}

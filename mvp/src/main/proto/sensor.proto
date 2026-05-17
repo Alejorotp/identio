@@ -1,0 +1,77 @@
+syntax = "proto3";
+
+package identio.sensor;
+
+option java_multiple_files = true;
+option java_package = "com.identio.mvp.interfaces.location.grpc.sensor";
+option java_outer_classname = "SensorProto";
+
+service SensorService {
+    rpc GetAllSensors (GetAllSensorsRequest) returns (GetAllSensorsResponse);
+    rpc GetSensorById (GetSensorByIdRequest) returns (SensorResponse);
+    rpc GetSensorsByLocation (GetSensorsByLocationRequest) returns (GetSensorsByLocationResponse);
+    rpc CreateSensor (CreateSensorRequest) returns (SensorResponse);
+    rpc UpdateSensor (UpdateSensorRequest) returns (SensorResponse);
+    rpc UpdateSensorStatus (UpdateSensorStatusRequest) returns (SensorResponse);
+    rpc DeleteSensor (DeleteSensorRequest) returns (DeleteSensorResponse);
+}
+
+message SensorResponse {
+    string id = 1;
+    string name = 2;
+    string mac_address = 3;
+    string status = 4;
+    string location_id = 5;
+    string config_json = 6;
+}
+
+message GetAllSensorsRequest {
+    int32 page = 1;
+    int32 size = 2;
+}
+
+message GetAllSensorsResponse {
+    repeated SensorResponse sensors = 1;
+    int32 total_pages = 2;
+    int64 total_elements = 3;
+}
+
+message GetSensorByIdRequest {
+    string id = 1;
+}
+
+message GetSensorsByLocationRequest {
+    string location_id = 1;
+}
+
+message GetSensorsByLocationResponse {
+    repeated SensorResponse sensors = 1;
+}
+
+message CreateSensorRequest {
+    string name = 1;
+    string mac_address = 2;
+    string status = 3;
+    string location_id = 4;
+    string config_json = 5;
+}
+
+message UpdateSensorRequest {
+    string id = 1;
+    string name = 2;
+    string location_id = 3;
+    string config_json = 4;
+}
+
+message UpdateSensorStatusRequest {
+    string id = 1;
+    string status = 2;
+}
+
+message DeleteSensorRequest {
+    string id = 1;
+}
+
+message DeleteSensorResponse {
+    bool success = 1;
+}
