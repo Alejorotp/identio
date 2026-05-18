@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package identio.audit;
+
+option java_multiple_files = true;
+option java_package = "com.identio.mvp.interfaces.audit.grpc.audit";
+option java_outer_classname = "AuditProto";
+
+service AuditLogService {
+    rpc GetAuditLogs (GetAuditLogsRequest) returns (GetAuditLogsResponse);
+    rpc PublishAuditEvent (PublishAuditEventRequest) returns (PublishAuditEventResponse);
+}
+
+message AuditLogResponse {
+    string id = 1;
+    string user_id = 2;
+    string event_type = 3;
+    string timestamp = 4;
+    string details_json = 5;
+}
+
+message GetAuditLogsRequest {
+    int32 page = 1;
+    int32 size = 2;
+}
+
+message GetAuditLogsResponse {
+    repeated AuditLogResponse audit_logs = 1;
+    int32 total_pages = 2;
+    int64 total_elements = 3;
+}
+
+message PublishAuditEventRequest {
+    string user_id = 1;
+    string event_type = 2;
+    string details_json = 3;
+}
+
+message PublishAuditEventResponse {
+    bool success = 1;
+}
