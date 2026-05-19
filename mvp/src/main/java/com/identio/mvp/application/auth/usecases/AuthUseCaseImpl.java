@@ -68,4 +68,14 @@ public class AuthUseCaseImpl implements AuthUseCase {
             throw new BadCredentialsException("Invalid refresh token");
         }
     }
+
+    @Override
+    @Transactional(readOnly = true)
+    public TokenResponse loginFacial(FacialTokenRequest request) {
+        User user = userRepository.findById(request.userId())
+                .orElseThrow(() -> new IllegalArgumentException("User not found"));
+        if (user.getStatus() != UserStatus.ENROLLED)
+            throw new DisabledException("Account is inactive");
+        return new TokenResponse(user.getId(), tokenService.generateShortLivedAccessToken(user), "");
+    }
 }

@@ -4,6 +4,7 @@ import com.identio.mvp.application.auth.dto.LoginRequest;
 import com.identio.mvp.application.auth.dto.RefreshTokenRequest;
 import com.identio.mvp.application.auth.dto.RegisterRequest;
 import com.identio.mvp.application.auth.dto.TokenResponse;
+import com.identio.mvp.application.auth.dto.FacialTokenRequest;
 import com.identio.mvp.application.auth.usecases.AuthUseCase;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -61,5 +62,17 @@ public class AuthController {
     @PostMapping("/refresh")
     public ResponseEntity<TokenResponse> refresh(@Valid @RequestBody RefreshTokenRequest request) {
         return ResponseEntity.ok(authUseCase.refreshToken(request));
+    }
+
+    @Operation(summary = "Generate short-lived facial token", description = "Generates a 3-minute short-lived access token for a face-verified user.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Successfully generated token",
+                    content = @Content(schema = @Schema(implementation = TokenResponse.class))),
+            @ApiResponse(responseCode = "400", description = "Invalid request or user not found",
+                    content = @Content)
+    })
+    @PostMapping("/facial")
+    public ResponseEntity<TokenResponse> loginFacial(@Valid @RequestBody FacialTokenRequest request) {
+        return ResponseEntity.ok(authUseCase.loginFacial(request));
     }
 }

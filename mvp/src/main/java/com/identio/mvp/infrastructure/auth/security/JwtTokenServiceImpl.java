@@ -30,6 +30,16 @@ public class JwtTokenServiceImpl implements TokenService {
         return jwtEncoder.encode(JwtEncoderParameters.from(accessClaims)).getTokenValue();
     }
     @Override
+    public String generateShortLivedAccessToken(User user) {
+        Instant now = Instant.now();
+        Instant expiresAt = now.plus(3, ChronoUnit.MINUTES);
+        List<String> roles = user.getRoles().stream().map(Role::getName).collect(Collectors.toList());
+        JwtClaimsSet accessClaims = JwtClaimsSet.builder()
+                .issuer("identio-auth").issuedAt(now).expiresAt(expiresAt)
+                .subject(user.getId().toString()).claim("roles", roles).claim("type", "access").build();
+        return jwtEncoder.encode(JwtEncoderParameters.from(accessClaims)).getTokenValue();
+    }
+    @Override
     public String generateRefreshToken(User user) {
         Instant now = Instant.now();
         Instant refreshExp = now.plus(7, ChronoUnit.DAYS);
