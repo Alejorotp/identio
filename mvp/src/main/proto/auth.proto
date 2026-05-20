@@ -38,4 +38,5 @@ message TokenResponse {
   string token_type = 3;
   string user_id = 4;
   string full_name = 5;
+  string status = 6;
 }

@@ -14,13 +14,15 @@ public record TokenResponse(
         @Schema(description = "Token type, typically Bearer")
         String tokenType,
         @Schema(description = "The full name of the user")
-        String fullName
+        String fullName,
+        @Schema(description = "The status of the user account")
+        String status
 ) {
-    public TokenResponse(UUID userId, String accessToken, String refreshToken, String fullName) {
-        this(userId, accessToken, refreshToken, "Bearer", fullName);
+    public TokenResponse(UUID userId, String accessToken, String refreshToken, String fullName, String status) {
+        this(userId, accessToken, refreshToken, "Bearer", fullName, status);
     }
 
     public TokenResponse(UUID userId, String accessToken, String refreshToken) {
-        this(userId, accessToken, refreshToken, "Bearer", "");
+        this(userId, accessToken, refreshToken, "Bearer", "", "");
     }
 }
