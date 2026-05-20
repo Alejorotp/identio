@@ -84,7 +84,7 @@ public class AuthServiceGrpcImpl extends AuthServiceGrpc.AuthServiceImplBase {
     }
 
     @Override
-    public void generateFacialToken(FacialTokenRequest request, StreamObserver<TokenResponse> responseObserver) {
+    public void generateFacialToken(FacialTokenRequest request, StreamObserver<com.identio.mvp.interfaces.auth.grpc.auth.FacialTokenResponse> responseObserver) {
         log.info("gRPC GenerateFacialToken request received for user ID: {}", request.getUserId());
         var dtoRequest = new com.identio.mvp.application.auth.dto.FacialTokenRequest(
                 UUID.fromString(request.getUserId())
@@ -92,11 +92,9 @@ public class AuthServiceGrpcImpl extends AuthServiceGrpc.AuthServiceImplBase {
 
         var dtoResponse = authUseCase.loginFacial(dtoRequest);
 
-        TokenResponse response = TokenResponse.newBuilder()
+        com.identio.mvp.interfaces.auth.grpc.auth.FacialTokenResponse response = com.identio.mvp.interfaces.auth.grpc.auth.FacialTokenResponse.newBuilder()
                 .setAccessToken(dtoResponse.accessToken())
-                .setRefreshToken(dtoResponse.refreshToken())
                 .setTokenType(dtoResponse.tokenType())
-                .setUserId(dtoResponse.userId().toString())
                 .build();
 
         responseObserver.onNext(response);
