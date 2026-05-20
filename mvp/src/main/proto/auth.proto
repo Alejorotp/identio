@@ -10,7 +10,7 @@ service AuthService {
   rpc Register (RegisterRequest) returns (TokenResponse);
   rpc Login (LoginRequest) returns (TokenResponse);
   rpc Refresh (RefreshTokenRequest) returns (TokenResponse);
-  rpc GenerateFacialToken (FacialTokenRequest) returns (FacialTokenResponse);
+  rpc GenerateFacialToken (FacialTokenRequest) returns (TokenResponse);
 }
 
 message RegisterRequest {
@@ -30,11 +30,6 @@ message RefreshTokenRequest {
 
 message FacialTokenRequest {
   string user_id = 1;
-}
-
-message FacialTokenResponse {
-  string access_token = 1;
-  string token_type = 2;
 }
 
 message TokenResponse {
