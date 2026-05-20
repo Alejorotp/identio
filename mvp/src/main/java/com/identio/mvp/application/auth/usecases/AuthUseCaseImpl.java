@@ -50,7 +50,7 @@ public class AuthUseCaseImpl implements AuthUseCase {
                 .orElseThrow(() -> new BadCredentialsException("Invalid credentials"));
         if (!passwordHashingService.matches(request.password(), user.getPasswordHash()))
             throw new BadCredentialsException("Invalid credentials");
-        if (user.getStatus() != UserStatus.ENROLLED)
+        if (user.getStatus() == UserStatus.BLOCKED || user.getStatus() == UserStatus.DELETED)
             throw new DisabledException("Account is inactive");
         return new TokenResponse(user.getId(), tokenService.generateAccessToken(user),
                 tokenService.generateRefreshToken(user), user.getFullName(), user.getStatus().name());
@@ -63,7 +63,7 @@ public class AuthUseCaseImpl implements AuthUseCase {
             String subject = tokenService.extractSubjectFromRefreshToken(request.refreshToken());
             User user = userRepository.findById(UUID.fromString(subject))
                     .orElseThrow(() -> new BadCredentialsException("User not found"));
-            if (user.getStatus() != UserStatus.ENROLLED)
+            if (user.getStatus() == UserStatus.BLOCKED || user.getStatus() == UserStatus.DELETED)
                 throw new DisabledException("Account is inactive");
             return new TokenResponse(user.getId(), tokenService.generateAccessToken(user),
                     tokenService.generateRefreshToken(user), user.getFullName(), user.getStatus().name());
