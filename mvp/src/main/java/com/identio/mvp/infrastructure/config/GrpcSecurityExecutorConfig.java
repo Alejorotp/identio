@@ -11,7 +11,6 @@ import java.util.concurrent.Executors;
 public class GrpcSecurityExecutorConfig {
 
     @Bean
-    @SuppressWarnings("unchecked")
     public ServerBuilderCustomizer securityExecutorCustomizer() {
         return builder -> builder.executor(
             new DelegatingSecurityContextExecutor(Executors.newCachedThreadPool())
