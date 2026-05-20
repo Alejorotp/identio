@@ -12,9 +12,15 @@ public record TokenResponse(
         @Schema(description = "JWT refresh token for obtaining new access tokens")
         String refreshToken,
         @Schema(description = "Token type, typically Bearer")
-        String tokenType
+        String tokenType,
+        @Schema(description = "The full name of the user")
+        String fullName
 ) {
+    public TokenResponse(UUID userId, String accessToken, String refreshToken, String fullName) {
+        this(userId, accessToken, refreshToken, "Bearer", fullName);
+    }
+
     public TokenResponse(UUID userId, String accessToken, String refreshToken) {
-        this(userId, accessToken, refreshToken, "Bearer");
+        this(userId, accessToken, refreshToken, "Bearer", "");
     }
 }

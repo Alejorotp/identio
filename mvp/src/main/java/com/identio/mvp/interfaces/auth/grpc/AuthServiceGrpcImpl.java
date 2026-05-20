@@ -36,6 +36,7 @@ public class AuthServiceGrpcImpl extends AuthServiceGrpc.AuthServiceImplBase {
                 .setRefreshToken(dtoResponse.refreshToken())
                 .setTokenType(dtoResponse.tokenType())
                 .setUserId(dtoResponse.userId().toString())
+                .setFullName(dtoResponse.fullName())
                 .build();
 
         responseObserver.onNext(response);
@@ -57,6 +58,7 @@ public class AuthServiceGrpcImpl extends AuthServiceGrpc.AuthServiceImplBase {
                 .setRefreshToken(dtoResponse.refreshToken())
                 .setTokenType(dtoResponse.tokenType())
                 .setUserId(dtoResponse.userId().toString())
+                .setFullName(dtoResponse.fullName())
                 .build();
 
         responseObserver.onNext(response);
@@ -77,6 +79,7 @@ public class AuthServiceGrpcImpl extends AuthServiceGrpc.AuthServiceImplBase {
                 .setRefreshToken(dtoResponse.refreshToken())
                 .setTokenType(dtoResponse.tokenType())
                 .setUserId(dtoResponse.userId().toString())
+                .setFullName(dtoResponse.fullName())
                 .build();
 
         responseObserver.onNext(response);
@@ -97,6 +100,7 @@ public class AuthServiceGrpcImpl extends AuthServiceGrpc.AuthServiceImplBase {
                 .setRefreshToken(dtoResponse.refreshToken())
                 .setTokenType(dtoResponse.tokenType())
                 .setUserId(dtoResponse.userId().toString())
+                .setFullName(dtoResponse.fullName())
                 .build();
 
         responseObserver.onNext(response);
