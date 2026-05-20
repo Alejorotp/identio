@@ -28,7 +28,8 @@ public class UserServiceGrpcImpl extends UserServiceGrpc.UserServiceImplBase {
         int page = request.getPage() > 0 ? request.getPage() : 0;
         int size = request.getSize() > 0 ? request.getSize() : 20;
 
-        Page<com.identio.mvp.application.user.dto.UserResponse> userPage = userUseCase.getAllUsers(PageRequest.of(page, size));
+        Page<com.identio.mvp.application.user.dto.UserResponse> userPage = userUseCase
+                .getAllUsers(PageRequest.of(page, size));
 
         GetAllUsersResponse response = GetAllUsersResponse.newBuilder()
                 .addAllUsers(userPage.getContent().stream().map(this::mapToProtoResponse).collect(Collectors.toList()))
@@ -57,8 +58,7 @@ public class UserServiceGrpcImpl extends UserServiceGrpc.UserServiceImplBase {
                 request.getFullName(),
                 request.getEmail(),
                 request.getPassword(),
-                new HashSet<>(request.getRolesList())
-        );
+                new HashSet<>(request.getRolesList()));
         var dtoResponse = userUseCase.createUser(dtoRequest);
         responseObserver.onNext(mapToProtoResponse(dtoResponse));
         responseObserver.onCompleted();
@@ -71,20 +71,18 @@ public class UserServiceGrpcImpl extends UserServiceGrpc.UserServiceImplBase {
         var dtoRequest = new com.identio.mvp.application.user.dto.UpdateUserRequest(
                 request.getFullName(),
                 request.getPassword(),
-                new HashSet<>(request.getRolesList())
-        );
+                new HashSet<>(request.getRolesList()));
         var dtoResponse = userUseCase.updateUser(UUID.fromString(request.getId()), dtoRequest);
         responseObserver.onNext(mapToProtoResponse(dtoResponse));
         responseObserver.onCompleted();
     }
 
     @Override
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasRole('ADMIN') or #request.id == authentication.name")
     public void updateUserStatus(UpdateUserStatusRequest request, StreamObserver<UserResponse> responseObserver) {
         log.info("gRPC UpdateUserStatus request received for id: {}", request.getId());
         var dtoRequest = new com.identio.mvp.application.user.dto.UpdateUserStatusRequest(
-                UserStatus.valueOf(request.getStatus().toUpperCase())
-        );
+                UserStatus.valueOf(request.getStatus().toUpperCase()));
         var dtoResponse = userUseCase.updateStatus(UUID.fromString(request.getId()), dtoRequest);
         responseObserver.onNext(mapToProtoResponse(dtoResponse));
         responseObserver.onCompleted();
