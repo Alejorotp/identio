@@ -8,6 +8,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -19,6 +20,12 @@ public class GetAuditLogsUseCaseImpl implements GetAuditLogsUseCase {
     @Transactional(readOnly = true)
     public Page<AuditLogResponse> getAuditLogs(Pageable pageable) {
         return auditLogRepository.findAll(pageable).map(this::mapToResponse);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public Page<AuditLogResponse> getAuditLogsByUserId(UUID userId, Pageable pageable) {
+        return auditLogRepository.findByUserId(userId, pageable).map(this::mapToResponse);
     }
 
     private AuditLogResponse mapToResponse(AuditLog log) {

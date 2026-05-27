@@ -29,9 +29,17 @@ public class AuditLogServiceGrpcImpl extends AuditLogServiceGrpc.AuditLogService
     private static final ObjectMapper objectMapper = new ObjectMapper();
 
     @Override
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasRole('ADMIN') or #request.userId == authentication.name")
     public void getAuditLogs(GetAuditLogsRequest request, StreamObserver<GetAuditLogsResponse> responseObserver) {
-        Page<AuditLogResponse> page = getAuditLogsUseCase.getAuditLogs(PageRequest.of(request.getPage(), request.getSize()));
+        Page<AuditLogResponse> page;
+        if (request.getUserId() != null && !request.getUserId().isEmpty()) {
+            page = getAuditLogsUseCase.getAuditLogsByUserId(
+                UUID.fromString(request.getUserId()),
+                PageRequest.of(request.getPage(), request.getSize())
+            );
+        } else {
+            page = getAuditLogsUseCase.getAuditLogs(PageRequest.of(request.getPage(), request.getSize()));
+        }
         
         GetAuditLogsResponse response = GetAuditLogsResponse.newBuilder()
                 .addAllAuditLogs(page.getContent().stream().map(this::mapToGrpcResponse).collect(Collectors.toList()))
